@@ -34,22 +34,15 @@ function setLang(next) {
   renderAll();
 }
 
-// The call button either opens a set link (Lebanese page: WhatsApp), the
-// booking calendar if one is configured, or else an email.
+// The call button opens the booking calendar if one is configured, otherwise
+// the page's own link (a WhatsApp chat with a message already typed).
 function setCallButton(el) {
   const call = t().call;
   el.textContent = call.label;
   el.classList.toggle("btn-whatsapp", call.style === "whatsapp");
-  const href = call.href || BRAND.bookingUrl;
-  if (href) {
-    el.href = href;
-    el.target = "_blank";
-    el.rel = "noopener";
-  } else {
-    el.href = `mailto:${BRAND.email}?subject=${encodeURIComponent(call.subject)}`;
-    el.removeAttribute("target");
-    el.removeAttribute("rel");
-  }
+  el.href = BRAND.bookingUrl || call.href;
+  el.target = "_blank";
+  el.rel = "noopener";
 }
 
 function renderMeta() {
@@ -115,8 +108,6 @@ function renderWork() {
     </div>
   `).join("");
   $("workGrid").classList.toggle("work-grid--single", c.items.length === 1);
-  $("workMore").textContent = c.more;
-  $("workMore").href = BRAND.portfolio;
 }
 
 function renderProcess() {
@@ -150,7 +141,6 @@ function renderAbout() {
   $("aboutTag").textContent = c.tag;
   $("aboutHeading").textContent = c.heading;
   $("aboutText").textContent = c.text;
-  $("aboutPhoto").alt = c.alt;
 }
 
 function fieldHtml(formId, f) {
@@ -253,8 +243,6 @@ function renderFooter() {
   $("footerCopy").textContent = f.copy.replace("{year}", new Date().getFullYear());
   $("footerLegal").textContent = f.legal;
   $("footerLegal").href = f.legalHref;
-  $("footerPortfolio").textContent = f.portfolio;
-  $("footerPortfolio").href = BRAND.portfolio;
   $("footerRegion").textContent = f.region;
   $("footerRegionLink").textContent = f.regionOther;
   $("footerRegionLink").href = f.regionHref;
@@ -342,7 +330,7 @@ $("formsWrap").addEventListener("submit", async e => {
   note.className = "form-note";
 
   try {
-    const response = await fetch(`https://formsubmit.co/ajax/${BRAND.email}`, {
+    const response = await fetch(BRAND.formEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(data)

@@ -288,9 +288,6 @@ section[id] { scroll-margin-top: 80px; }
 }
 .work-link { margin-top: auto; color: var(--accent-2); font-weight: 600; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 4px; }
 .work-link:hover { color: var(--accent); }
-.work-more { margin: 22px 0 0; }
-.work-more a { color: var(--text-dim); font-size: 0.92rem; border-bottom: 1px solid rgba(255,255,255,0.25); }
-.work-more a:hover { color: var(--text); border-color: var(--accent); }
 
 /* Process */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); }
@@ -313,7 +310,7 @@ section[id] { scroll-margin-top: 80px; }
 .step h3 { margin: 0 0 8px; font-size: 1.15rem; }
 .step p { color: var(--text-dim); margin: 0; font-size: 0.93rem; line-height: 1.7; }
 
-/* Why work with me */
+/* Why work with us */
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-gap); }
 .why-card {
   background: var(--card);
@@ -325,19 +322,13 @@ section[id] { scroll-margin-top: 80px; }
 .why-card h3 { margin: 0 0 8px; font-size: 1.08rem; }
 .why-card p { color: var(--text-dim); margin: 0; font-size: 0.92rem; line-height: 1.65; }
 
-/* About */
-.about-wrap { display: flex; align-items: center; gap: clamp(24px, 5vw, 56px); }
-.about-photo {
-  flex-shrink: 0;
-  width: 220px; height: 220px;
-  border-radius: 36px;
-  padding: 5px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  box-shadow: var(--shadow);
-  overflow: hidden;
+/* About — a text card in company voice */
+.about-wrap {
+  background: linear-gradient(135deg, rgba(37,99,235,0.14), rgba(124,58,237,0.08)), var(--card);
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: var(--radius);
+  padding: clamp(28px, 4vw, 44px);
 }
-.about-photo picture { display: block; height: 100%; }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 31px; display: block; }
 .about-body .tag { margin-bottom: 12px; }
 .about-text { color: var(--text-dim); line-height: 1.85; font-size: 1.02rem; margin: 14px 0 0; max-width: 62ch; }
 
@@ -491,9 +482,6 @@ section[id] { scroll-margin-top: 80px; }
   .logo small { display: none; }
   .paths-grid, .work-grid, .work-grid--single, .why-grid, .form-grid { grid-template-columns: minmax(0, 1fr); }
   .form-tabs { flex-direction: column; }
-  .about-wrap { flex-direction: column; align-items: flex-start; }
-  .about-photo { width: 160px; height: 160px; border-radius: 28px; }
-  .about-photo img { border-radius: 23px; }
   .contact-details li { flex-direction: column; align-items: flex-start; }
 }
 

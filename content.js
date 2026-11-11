@@ -4,25 +4,31 @@
   (English by default, switchable in the navbar). The Lebanese homepage has
   its own copy in lb/content.js with the same shape.
 
+  Written in company voice ("we"). No personal name, photo, email address or
+  phone number is shown on the page; visitors reach you through the two forms
+  and the WhatsApp button.
+
   Things you'll most likely want to change:
     - BRAND.bookingUrl   set to a Calendly / Cal.com link and "Book a free call"
-                         opens your calendar (until then it opens an email)
+                         opens your calendar (until then it opens WhatsApp)
+    - BRAND.formEndpoint once FormSubmit has sent you an activation email, swap
+                         the address here for the random alias it gives you,
+                         so your Gmail address isn't in the page source
     - contact.forms      the two enquiry forms: their fields, choices, and the
                          email subject each one arrives with
 */
 const BRAND = {
   name: "Ghazal — Digital Solutions",
-  email: "nadimghazal71@gmail.com",
-  phone: "+41 76 794 85 18",
-  phoneHref: "tel:+41767948518",
   whatsapp: "https://wa.me/41767948518",
-  portfolio: "https://ghazalcode.ch/",
-  // Leave empty to fall back to an email. Example: "https://cal.com/yourname/intro"
+  formEndpoint: "https://formsubmit.co/ajax/nadimghazal71@gmail.com",
+  // Leave empty to fall back to WhatsApp. Example: "https://cal.com/ghazal-digital/intro"
   bookingUrl: ""
 };
 
 // Sent with every enquiry so you can tell which homepage it came from
 const PAGE = { region: "Switzerland" };
+
+const wa = text => BRAND.whatsapp + "?text=" + encodeURIComponent(text);
 
 const CONTENT = {
   en: {
@@ -30,14 +36,14 @@ const CONTENT = {
       title: "Ghazal — Digital Solutions | Apps, websites & automation for businesses in Zurich",
       description: "Custom apps, websites and data-entry systems that replace paper and spreadsheets — plus fixing, upgrading and automating the tools you already have. Based in Zurich."
     },
-    nav: [["#services", "What I do"], ["#work", "Work"], ["#process", "How it works"], ["#contact", "Contact"]],
+    nav: [["#services", "What we do"], ["#work", "Work"], ["#process", "How it works"], ["#contact", "Contact"]],
     langSwitch: { aria: "Deutsche Version anzeigen" },
-    call: { label: "Book a free call", subject: "Free call" },
+    call: { label: "Book a free call", href: wa("Hello, I'd like to book a free call.") },
 
     hero: {
       eyebrow: "Ghazal — Digital Solutions",
       title: "Software that gets your business off paper and spreadsheets.",
-      text: "Custom apps, websites and data-entry systems for shops and small businesses — and when your current tools are slow, broken or eat up your day, I fix, upgrade and automate them.",
+      text: "We build custom apps, websites and data-entry systems for shops and small businesses — and when your current tools are slow, broken or eat up your day, we fix, upgrade and automate them.",
       fixBtn: "Fix or automate something",
       buildBtn: "Build an app or website",
       callPrefix: "or",
@@ -45,7 +51,7 @@ const CONTENT = {
     },
 
     services: {
-      tag: "What I do",
+      tag: "What we do",
       heading: "Two ways to make your work easier",
       paths: [
         {
@@ -80,7 +86,7 @@ const CONTENT = {
     work: {
       tag: "Work",
       heading: "Real systems, already in use",
-      intro: "A few examples of what I've built. Each one started as a paper or spreadsheet process.",
+      intro: "A few examples of what we've built. Each one started as a paper or spreadsheet process.",
       demoLabel: "Live demo ↗",
       items: [
         {
@@ -94,51 +100,48 @@ const CONTENT = {
           tags: ["Swiss payment standards", "Print-ready", "Live demo"],
           demo: "https://ghazalcode.ch/projects/qr-bill/"
         }
-      ],
-      more: "See more of my work in my developer portfolio ↗"
+      ]
     },
 
     process: {
       tag: "How it works",
       heading: "From first call to a working tool",
       steps: [
-        { n: "1", title: "Free call", text: "A relaxed 30 minutes. You show me how things work today; I ask questions and tell you honestly whether software is the right answer." },
+        { n: "1", title: "Free call", text: "A relaxed 30 minutes. You show us how things work today; we ask questions and tell you honestly whether software is the right answer." },
         { n: "2", title: "Clear proposal", text: "You get a written scope, timeline and price before any work starts. No surprises, no jargon." },
-        { n: "3", title: "Built in steps", text: "You see working versions early and often, so we fix things while they're cheap to change. Then I train your team and stay on hand after launch." }
+        { n: "3", title: "Built in steps", text: "You see working versions early and often, so we fix things while they're cheap to change. Then we train your team and stay on hand after launch." }
       ]
     },
 
     why: {
-      tag: "Why work with me",
+      tag: "Why work with us",
       heading: "What you can count on",
       items: [
         { icon: "📍", title: "Local in Zurich", text: "On-site meetings in the Zurich area, or remote anywhere in Switzerland." },
         { icon: "🧾", title: "Swiss standards built in", text: "QR-bill invoicing, print-ready documents and data protection under the nDSG are part of the job, not an afterthought." },
         { icon: "📋", title: "A clear price up front", text: "You get the scope, timeline and price in writing before any work starts." },
-        { icon: "🤝", title: "One person, start to finish", text: "You talk to me from the first call to the last fix — not to a call centre." }
+        { icon: "🤝", title: "One contact, start to finish", text: "You deal with the same person from the first call to the last fix — not a call centre." }
       ]
     },
 
     about: {
-      tag: "About",
-      heading: "Hi, I'm Nadim",
-      text: "I'm a software developer with a computer-science degree and a background in banking and fintech software, where accuracy matters. I now build and fix practical tools for small and mid-sized businesses. I write in plain language, deliver in small steps, and I'm the person you talk to from the first call to the last fix.",
-      alt: "Nadim Ghazal"
+      tag: "About us",
+      heading: "Who we are",
+      text: "Ghazal — Digital Solutions builds and fixes practical software for small and mid-sized businesses. Our background is banking and fintech software, where every number has to be right. We explain things in plain language, deliver in small steps, and stay with you from the first call to the last fix."
     },
 
     contact: {
       tag: "Contact",
-      heading: "Tell me what you need",
-      text: "Pick the form that fits — a rough idea is enough. I'll reply within one working day.",
+      heading: "Tell us what you need",
+      text: "Pick the form that fits — a rough idea is enough. We reply within one working day.",
       details: [
-        { label: "Email", value: BRAND.email, href: "mailto:" + BRAND.email },
-        { label: "WhatsApp / Phone", value: BRAND.phone, href: BRAND.whatsapp },
+        { label: "WhatsApp", value: "Chat with us", href: wa("Hello, I have a question about my business.") },
         { label: "Location", value: "Zurich, Switzerland" }
       ],
       tabsLabel: "Choose a form",
       sending: "Sending…",
-      success: "Thank you — your request is on its way. I'll reply within one working day.",
-      error: "Something went wrong sending that. Please email me directly at " + BRAND.email + ".",
+      success: "Thank you — your request is on its way. We'll reply within one working day.",
+      error: "Something went wrong sending that. Please try again, or message us on WhatsApp.",
       forms: {
         fix: {
           tab: "Fix, upgrade or automate",
@@ -173,17 +176,16 @@ const CONTENT = {
               options: ["As soon as possible", "Within 1–3 months", "Later this year", "Flexible"] },
             { name: "budget", label: "Budget (optional)", type: "select", half: true,
               options: ["Under CHF 2,000", "CHF 2,000–5,000", "CHF 5,000–15,000", "Over CHF 15,000", "Not sure yet"] },
-            { name: "message", label: "Tell me about your business and what it should do", type: "textarea", required: true }
+            { name: "message", label: "Tell us about your business and what it should do", type: "textarea", required: true }
           ]
         }
       }
     },
 
     footer: {
-      copy: "© {year} Ghazal — Digital Solutions (Nadim Ghazal), Zurich",
+      copy: "© {year} Ghazal — Digital Solutions, Zurich",
       legal: "Legal notice & privacy",
       legalHref: "legal.html",
-      portfolio: "Developer portfolio",
       region: "Region: Switzerland ·",
       regionOther: "Lebanon",
       // ?region= stores the choice so the time-zone check stops overriding it
@@ -198,12 +200,12 @@ const CONTENT = {
     },
     nav: [["#services", "Leistungen"], ["#work", "Referenzen"], ["#process", "Ablauf"], ["#contact", "Kontakt"]],
     langSwitch: { aria: "Show English version" },
-    call: { label: "Gratis-Gespräch buchen", subject: "Gratis-Gespräch" },
+    call: { label: "Gratis-Gespräch buchen", href: wa("Grüezi, ich möchte gerne ein Gratis-Gespräch buchen.") },
 
     hero: {
       eyebrow: "Ghazal — Digital Solutions",
       title: "Software, die Ihr Unternehmen von Papier und Excel befreit.",
-      text: "Individuelle Apps, Websites und Erfassungssysteme für Läden und kleine Unternehmen — und wenn Ihre bestehenden Tools langsam, fehlerhaft oder zeitraubend sind, repariere, modernisiere und automatisiere ich sie.",
+      text: "Wir bauen individuelle Apps, Websites und Erfassungssysteme für Läden und kleine Unternehmen — und wenn Ihre bestehenden Tools langsam, fehlerhaft oder zeitraubend sind, reparieren, modernisieren und automatisieren wir sie.",
       fixBtn: "Etwas reparieren oder automatisieren",
       buildBtn: "App oder Website erstellen",
       callPrefix: "oder",
@@ -246,7 +248,7 @@ const CONTENT = {
     work: {
       tag: "Referenzen",
       heading: "Echte Systeme, bereits im Einsatz",
-      intro: "Einige Beispiele aus meiner Arbeit. Jedes begann als Papier- oder Excel-Prozess.",
+      intro: "Einige Beispiele aus unserer Arbeit. Jedes begann als Papier- oder Excel-Prozess.",
       demoLabel: "Live-Demo ↗",
       items: [
         {
@@ -260,51 +262,48 @@ const CONTENT = {
           tags: ["Schweizer Zahlungsstandards", "Druckfertig", "Live-Demo"],
           demo: "https://ghazalcode.ch/projects/qr-bill/"
         }
-      ],
-      more: "Mehr Arbeiten finden Sie in meinem Entwickler-Portfolio ↗"
+      ]
     },
 
     process: {
       tag: "Ablauf",
       heading: "Vom ersten Gespräch zum funktionierenden Werkzeug",
       steps: [
-        { n: "1", title: "Gratis-Gespräch", text: "Entspannte 30 Minuten. Sie zeigen mir, wie es heute läuft; ich stelle Fragen und sage Ihnen ehrlich, ob Software die richtige Lösung ist." },
+        { n: "1", title: "Gratis-Gespräch", text: "Entspannte 30 Minuten. Sie zeigen uns, wie es heute läuft; wir stellen Fragen und sagen Ihnen ehrlich, ob Software die richtige Lösung ist." },
         { n: "2", title: "Klares Angebot", text: "Sie erhalten schriftlich Umfang, Zeitplan und Preis, bevor die Arbeit beginnt. Keine Überraschungen, kein Fachjargon." },
-        { n: "3", title: "Umsetzung in Etappen", text: "Sie sehen früh und oft funktionierende Versionen, damit wir Anpassungen machen, solange sie günstig sind. Danach schule ich Ihr Team und bleibe nach dem Start erreichbar." }
+        { n: "3", title: "Umsetzung in Etappen", text: "Sie sehen früh und oft funktionierende Versionen, damit wir Anpassungen machen, solange sie günstig sind. Danach schulen wir Ihr Team und bleiben nach dem Start erreichbar." }
       ]
     },
 
     why: {
-      tag: "Warum ich",
+      tag: "Warum wir",
       heading: "Worauf Sie zählen können",
       items: [
         { icon: "📍", title: "Lokal in Zürich", text: "Treffen vor Ort im Raum Zürich oder remote in der ganzen Schweiz." },
         { icon: "🧾", title: "Schweizer Standards inklusive", text: "QR-Rechnung, druckfertige Dokumente und Datenschutz nach nDSG gehören dazu — nicht nachträglich angeflickt." },
         { icon: "📋", title: "Klarer Preis vorab", text: "Umfang, Zeitplan und Preis erhalten Sie schriftlich, bevor die Arbeit beginnt." },
-        { icon: "🤝", title: "Eine Ansprechperson", text: "Sie sprechen vom ersten Gespräch bis zur letzten Korrektur mit mir — nicht mit einem Callcenter." }
+        { icon: "🤝", title: "Eine Ansprechperson", text: "Sie haben vom ersten Gespräch bis zur letzten Korrektur dieselbe Ansprechperson — kein Callcenter." }
       ]
     },
 
     about: {
-      tag: "Über mich",
-      heading: "Hallo, ich bin Nadim",
-      text: "Ich bin Softwareentwickler mit Informatik-Abschluss und Erfahrung mit Banken- und Fintech-Software, wo Genauigkeit zählt. Heute baue und repariere ich praktische Werkzeuge für kleine und mittlere Unternehmen. Ich schreibe in einfacher Sprache, liefere in kleinen Schritten und bin Ihre Ansprechperson vom ersten Gespräch bis zur letzten Korrektur.",
-      alt: "Nadim Ghazal"
+      tag: "Über uns",
+      heading: "Wer wir sind",
+      text: "Ghazal — Digital Solutions baut und repariert praktische Software für kleine und mittlere Unternehmen. Unser Hintergrund ist Banken- und Fintech-Software, wo jede Zahl stimmen muss. Wir erklären in einfacher Sprache, liefern in kleinen Schritten und begleiten Sie vom ersten Gespräch bis zur letzten Korrektur."
     },
 
     contact: {
       tag: "Kontakt",
-      heading: "Sagen Sie mir, was Sie brauchen",
-      text: "Wählen Sie das passende Formular — eine grobe Idee genügt. Ich antworte innert eines Arbeitstages.",
+      heading: "Sagen Sie uns, was Sie brauchen",
+      text: "Wählen Sie das passende Formular — eine grobe Idee genügt. Wir antworten innert eines Arbeitstages.",
       details: [
-        { label: "E-Mail", value: BRAND.email, href: "mailto:" + BRAND.email },
-        { label: "WhatsApp / Telefon", value: BRAND.phone, href: BRAND.whatsapp },
+        { label: "WhatsApp", value: "Schreiben Sie uns", href: wa("Grüezi, ich habe eine Frage zu meinem Unternehmen.") },
         { label: "Ort", value: "Zürich, Schweiz" }
       ],
       tabsLabel: "Formular wählen",
       sending: "Wird gesendet…",
-      success: "Vielen Dank — Ihre Anfrage ist unterwegs. Ich melde mich innert eines Arbeitstages.",
-      error: "Beim Senden ist etwas schiefgelaufen. Bitte schreiben Sie mir direkt an " + BRAND.email + ".",
+      success: "Vielen Dank — Ihre Anfrage ist unterwegs. Wir melden uns innert eines Arbeitstages.",
+      error: "Beim Senden ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns auf WhatsApp.",
       forms: {
         fix: {
           tab: "Reparieren, verbessern, automatisieren",
@@ -339,17 +338,16 @@ const CONTENT = {
               options: ["So bald wie möglich", "Innert 1–3 Monaten", "Später im Jahr", "Flexibel"] },
             { name: "budget", label: "Budget (optional)", type: "select", half: true,
               options: ["Unter CHF 2'000", "CHF 2'000–5'000", "CHF 5'000–15'000", "Über CHF 15'000", "Noch unklar"] },
-            { name: "message", label: "Erzählen Sie mir von Ihrem Unternehmen und was es können soll", type: "textarea", required: true }
+            { name: "message", label: "Erzählen Sie uns von Ihrem Unternehmen und was es können soll", type: "textarea", required: true }
           ]
         }
       }
     },
 
     footer: {
-      copy: "© {year} Ghazal — Digital Solutions (Nadim Ghazal), Zürich",
+      copy: "© {year} Ghazal — Digital Solutions, Zürich",
       legal: "Impressum & Datenschutz",
       legalHref: "legal.html",
-      portfolio: "Entwickler-Portfolio",
       region: "Region: Schweiz ·",
       regionOther: "Libanon",
       regionHref: "./?region=lb"
