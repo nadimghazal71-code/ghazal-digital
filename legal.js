@@ -1,0 +1,112 @@
+/*
+  Renders the legal notice and privacy policy in the visitor's language (same
+  remembered choice as the main page). The wording lives here rather than in
+  content.js because it is long and rarely changes. Business details (name,
+  email, phone) come from BRAND in content.js, so they only exist in one place.
+
+  TODO before relying on this page: add the business's postal address and, once
+  registered, its UID number to `identity` below. Delete this note when done.
+*/
+
+const LEGAL = {
+  en: {
+    title: "Legal notice & privacy",
+    back: "← Back to the site",
+    updated: "Last updated: 11 November 2026",
+    identity: {
+      heading: "Legal notice",
+      lines: [
+        ["Business", BRAND.name + " (sole proprietorship)"],
+        ["Owner", "Nadim Ghazal"],
+        ["Location", "Zurich, Switzerland"],
+        ["Email", `<a href="mailto:${BRAND.email}">${BRAND.email}</a>`],
+        ["Phone", `<a href="${BRAND.phoneHref}">${BRAND.phone}</a>`]
+      ]
+    },
+    privacy: {
+      heading: "Privacy policy",
+      blocks: [
+        ["Who is responsible", `The person responsible for data processing on this website is Nadim Ghazal, Zurich, Switzerland (<a href="mailto:${BRAND.email}">${BRAND.email}</a>). This notice follows the Swiss Federal Act on Data Protection (nDSG) and, where it applies, the EU GDPR.`],
+        ["What this website collects", "No cookies, no analytics and no tracking tools are used. Fonts and all other files are served from this website itself, so no visitor data is passed to font or advertising providers. Your language choice (EN or DE) is stored in your own browser so the site can remember it; it never leaves your device."],
+        ["Server logs", "This site is hosted on GitHub Pages (GitHub, Inc., USA). Like any web host, GitHub may technically log visitors' IP addresses and request data to deliver and secure the service. I have no access to or control over these logs. See GitHub's privacy statement for details."],
+        ["Enquiry form", "If you use the enquiry form, the details you enter (name, email, optional business name and your message) are sent through the relay service FormSubmit (formsubmit.co) to my email inbox. I use them only to reply to you and to prepare a proposal if you ask for one, and I do not pass them to anyone else. I keep enquiries for as long as needed to handle them and for normal business records, then delete them. Emailing or messaging me directly (including via WhatsApp) works the same way: I use what you send only to answer you."],
+        ["Data abroad", "FormSubmit and GitHub are operated outside Switzerland (for example in the USA). If you prefer not to use the form, you can email me directly instead."],
+        ["Your rights", `You may ask me at any time for access to the data I hold about you, to have it corrected or deleted, or to object to its use. Write to <a href="mailto:${BRAND.email}">${BRAND.email}</a>. You can also contact the Swiss Federal Data Protection and Information Commissioner (FDPIC).`]
+      ]
+    },
+    footer: "© {year} Ghazal — Digital Solutions"
+  },
+
+  de: {
+    title: "Impressum & Datenschutz",
+    back: "← Zurück zur Website",
+    updated: "Stand: 11. November 2026",
+    identity: {
+      heading: "Impressum",
+      lines: [
+        ["Unternehmen", BRAND.name + " (Einzelunternehmen)"],
+        ["Inhaber", "Nadim Ghazal"],
+        ["Ort", "Zürich, Schweiz"],
+        ["E-Mail", `<a href="mailto:${BRAND.email}">${BRAND.email}</a>`],
+        ["Telefon", `<a href="${BRAND.phoneHref}">${BRAND.phone}</a>`]
+      ]
+    },
+    privacy: {
+      heading: "Datenschutzerklärung",
+      blocks: [
+        ["Verantwortlich", `Verantwortlich für die Datenbearbeitung auf dieser Website ist Nadim Ghazal, Zürich, Schweiz (<a href="mailto:${BRAND.email}">${BRAND.email}</a>). Diese Erklärung orientiert sich am Schweizer Datenschutzgesetz (nDSG) und, soweit anwendbar, an der EU-DSGVO.`],
+        ["Was diese Website erfasst", "Es werden keine Cookies, keine Analyse- und keine Tracking-Werkzeuge eingesetzt. Schriftarten und alle weiteren Dateien werden von dieser Website selbst geliefert, sodass keine Besucherdaten an Schrift- oder Werbeanbieter gelangen. Ihre Sprachwahl (EN oder DE) wird in Ihrem eigenen Browser gespeichert, damit die Website sie sich merken kann; sie verlässt Ihr Gerät nicht."],
+        ["Server-Protokolle", "Diese Website wird über GitHub Pages (GitHub, Inc., USA) gehostet. Wie jeder Webhoster kann GitHub technisch bedingt IP-Adressen und Anfragedaten der Besucher protokollieren, um den Dienst bereitzustellen und abzusichern. Auf diese Protokolle habe ich weder Zugriff noch Einfluss. Einzelheiten finden Sie in der Datenschutzerklärung von GitHub."],
+        ["Anfrageformular", "Wenn Sie das Anfrageformular nutzen, werden Ihre Angaben (Name, E-Mail, optional Firmenname und Ihre Nachricht) über den Weiterleitungsdienst FormSubmit (formsubmit.co) an mein E-Mail-Postfach gesendet. Ich verwende sie nur, um Ihnen zu antworten und auf Wunsch ein Angebot zu erstellen, und gebe sie nicht an Dritte weiter. Anfragen bewahre ich so lange auf, wie es für die Bearbeitung und übliche Geschäftsunterlagen nötig ist, und lösche sie danach. Wenn Sie mir direkt schreiben (auch per WhatsApp), gilt dasselbe: Ich verwende Ihre Angaben nur, um Ihnen zu antworten."],
+        ["Daten im Ausland", "FormSubmit und GitHub werden ausserhalb der Schweiz betrieben (z. B. in den USA). Wenn Sie das Formular lieber nicht nutzen möchten, können Sie mir direkt eine E-Mail schreiben."],
+        ["Ihre Rechte", `Sie können jederzeit Auskunft über die bei mir gespeicherten Daten verlangen, deren Berichtigung oder Löschung beantragen oder der Bearbeitung widersprechen. Schreiben Sie dazu an <a href="mailto:${BRAND.email}">${BRAND.email}</a>. Sie können sich auch an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) wenden.`]
+      ]
+    },
+    footer: "© {year} Ghazal — Digital Solutions"
+  }
+};
+
+const LANG_KEY = "lang";
+
+function initialLang() {
+  const fromUrl = new URLSearchParams(location.search).get("lang");
+  if (LEGAL[fromUrl]) return fromUrl;
+  try {
+    const stored = localStorage.getItem(LANG_KEY);
+    if (LEGAL[stored]) return stored;
+  } catch (e) {}
+  return "en";
+}
+
+let lang = initialLang();
+
+function render() {
+  const c = LEGAL[lang];
+  document.documentElement.lang = lang;
+  document.title = `${c.title} — Ghazal Digital Solutions`;
+
+  const btn = document.getElementById("langToggle");
+  btn.innerHTML = Object.keys(LEGAL)
+    .map(code => `<span class="lang-option${code === lang ? " is-active" : ""}">${code.toUpperCase()}</span>`)
+    .join("");
+  btn.setAttribute("aria-label", lang === "en" ? "Deutsche Version anzeigen" : "Show English version");
+
+  document.getElementById("legalRoot").innerHTML = `
+    <a class="back" href="./">${c.back}</a>
+    <h1>${c.title}</h1>
+    <p class="updated">${c.updated}</p>
+    <h2>${c.identity.heading}</h2>
+    <ul>${c.identity.lines.map(([k, v]) => `<li><strong>${k}:</strong> ${v}</li>`).join("")}</ul>
+    <h2>${c.privacy.heading}</h2>
+    ${c.privacy.blocks.map(([h, p]) => `<h3>${h}</h3><p>${p}</p>`).join("")}
+  `;
+  document.getElementById("footerCopy").textContent = c.footer.replace("{year}", new Date().getFullYear());
+}
+
+document.getElementById("langToggle").addEventListener("click", () => {
+  lang = lang === "en" ? "de" : "en";
+  try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+  render();
+});
+
+render();

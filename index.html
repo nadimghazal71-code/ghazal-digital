@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ghazal — Digital Solutions | Apps & systems for businesses in Switzerland and Lebanon</title>
+<meta name="description" content="Custom mobile apps, websites and data-entry systems that replace paper and spreadsheets in shops and small businesses. Based in Zurich, working with clients in Switzerland and Lebanon.">
+<meta name="author" content="Nadim Ghazal">
+<link rel="canonical" href="https://digital.ghazalcode.ch/">
+<meta name="theme-color" content="#0f1020">
+
+<!-- Link previews on LinkedIn, WhatsApp, Slack and X -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ghazal — Digital Solutions">
+<meta property="og:url" content="https://digital.ghazalcode.ch/">
+<meta property="og:title" content="Ghazal — Digital Solutions">
+<meta property="og:description" content="Apps, websites and data-entry systems that replace paper and spreadsheets. Zurich, for clients in Switzerland and Lebanon.">
+<meta property="og:image" content="https://digital.ghazalcode.ch/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ghazal — Digital Solutions">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<!--
+  Content Security Policy, delivered as a meta tag because GitHub Pages does
+  not allow custom response headers. Everything is served from this origin;
+  the only outbound connection is the enquiry form's relay.
+-->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  base-uri 'none';
+  object-src 'none';
+  script-src 'self';
+  style-src 'self';
+  font-src 'self';
+  img-src 'self' data:;
+  connect-src 'self' https://formsubmit.co;
+  form-action 'self' https://formsubmit.co;
+  upgrade-insecure-requests;
+">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Ghazal — Digital Solutions",
+  "url": "https://digital.ghazalcode.ch/",
+  "description": "Custom mobile apps, websites and data-entry systems for small businesses in Switzerland and Lebanon.",
+  "email": "nadimghazal71@gmail.com",
+  "founder": { "@type": "Person", "name": "Nadim Ghazal" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Zurich", "addressCountry": "CH" },
+  "areaServed": ["CH", "LB"],
+  "knowsLanguage": ["en", "de", "ar"]
+}
+</script>
+
+<link rel="stylesheet" href="assets/fonts/poppins.css">
+<!-- The ?v= token is a cache buster: GitHub Pages serves files with a 10-minute
+     cache, so bump it whenever style.css, content.js or script.js changes. -->
+<link rel="stylesheet" href="style.css?v=20261111a">
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="logo">Ghazal<span>.</span> <small>Digital Solutions</small></a>
+    <nav class="nav-links" id="navLinks"></nav>
+    <div class="nav-actions">
+      <button type="button" class="lang-toggle" id="langToggle"><span class="lang-option is-active">EN</span><span class="lang-option">DE</span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="top" class="hero">
+    <div class="hero-content">
+      <p class="eyebrow" id="heroEyebrow"></p>
+      <h1 id="heroTitle"></h1>
+      <p class="hero-text" id="heroText"></p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary" id="heroCallBtn"></a>
+        <a href="#contact" class="btn btn-outline" id="heroEnquiryBtn"></a>
+      </div>
+      <ul class="hero-facts" id="heroFacts"></ul>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="section-head">
+      <span class="tag" id="servicesTag"></span>
+      <h2 id="servicesHeading"></h2>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="section-head">
+      <span class="tag" id="workTag"></span>
+      <h2 id="workHeading"></h2>
+      <p class="section-intro" id="workIntro"></p>
+    </div>
+    <div class="work-grid" id="workGrid"></div>
+    <p class="work-more"><a id="workMore" href="https://ghazalcode.ch/" target="_blank" rel="noopener"></a></p>
+  </section>
+
+  <section id="process" class="section">
+    <div class="section-head">
+      <span class="tag" id="processTag"></span>
+      <h2 id="processHeading"></h2>
+    </div>
+    <ol class="steps" id="processSteps"></ol>
+  </section>
+
+  <section id="markets" class="section">
+    <div class="section-head">
+      <span class="tag" id="marketsTag"></span>
+      <h2 id="marketsHeading"></h2>
+    </div>
+    <div class="markets-grid" id="marketsGrid"></div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="about-wrap">
+      <div class="about-photo">
+        <picture>
+          <source srcset="assets/photo-nadim.webp" type="image/webp">
+          <img src="assets/photo-nadim.jpg" alt="" id="aboutPhoto" width="520" height="520" loading="lazy">
+        </picture>
+      </div>
+      <div class="about-body">
+        <span class="tag" id="aboutTag"></span>
+        <h2 id="aboutHeading"></h2>
+        <p class="about-text" id="aboutText"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="section-head">
+      <span class="tag" id="contactTag"></span>
+      <h2 id="contactHeading"></h2>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <p class="contact-text" id="contactText"></p>
+        <a class="btn btn-primary call-btn" id="contactCallBtn" href="#contact"></a>
+        <ul class="contact-details" id="contactDetails"></ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label class="sr-only" for="formName" id="labelName"></label>
+          <input type="text" name="name" id="formName" autocomplete="name" required>
+          <label class="sr-only" for="formEmail" id="labelEmail"></label>
+          <input type="email" name="email" id="formEmail" autocomplete="email" required>
+        </div>
+        <label class="sr-only" for="formCompany" id="labelCompany"></label>
+        <input type="text" name="company" id="formCompany" autocomplete="organization">
+        <label class="sr-only" for="formMessage" id="labelMessage"></label>
+        <textarea name="message" id="formMessage" rows="5" required></textarea>
+        <!-- Spam trap: hidden from people, irresistible to bots. Handled in script.js. -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="honeypot">
+        <button type="submit" class="btn btn-primary" id="formSubmit"></button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p id="footerCopy"></p>
+  <p class="footer-links">
+    <a href="legal.html" id="footerLegal"></a>
+    <span aria-hidden="true">·</span>
+    <a href="https://ghazalcode.ch/" id="footerPortfolio" target="_blank" rel="noopener"></a>
+  </p>
+</footer>
+
+<script src="content.js?v=20261111a"></script>
+<script src="script.js?v=20261111a"></script>
+</body>
+</html>
