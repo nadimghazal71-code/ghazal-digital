@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ghazal — Digital Solutions | Apps & systems for businesses in Switzerland and Lebanon</title>
-<meta name="description" content="Custom mobile apps, websites and data-entry systems that replace paper and spreadsheets in shops and small businesses. Based in Zurich, working with clients in Switzerland and Lebanon.">
+<!-- Sends visitors whose device is on Beirut time to /lb/ before anything paints. See region.js. -->
+<script src="region.js?v=20261111c"></script>
+
+<title>Ghazal — Digital Solutions | Apps, websites & automation for businesses in Zurich</title>
+<meta name="description" content="Custom apps, websites and data-entry systems that replace paper and spreadsheets — plus fixing, upgrading and automating the tools you already have. Based in Zurich.">
 <meta name="author" content="Nadim Ghazal">
 <link rel="canonical" href="https://digital.ghazalcode.ch/">
 <meta name="theme-color" content="#0f1020">
@@ -15,7 +18,7 @@
 <meta property="og:site_name" content="Ghazal — Digital Solutions">
 <meta property="og:url" content="https://digital.ghazalcode.ch/">
 <meta property="og:title" content="Ghazal — Digital Solutions">
-<meta property="og:description" content="Apps, websites and data-entry systems that replace paper and spreadsheets. Zurich, for clients in Switzerland and Lebanon.">
+<meta property="og:description" content="Apps, websites and data-entry systems that replace paper and spreadsheets — and fixing and automating the tools you already have. Zurich.">
 <meta property="og:image" content="https://digital.ghazalcode.ch/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -29,7 +32,7 @@
 <!--
   Content Security Policy, delivered as a meta tag because GitHub Pages does
   not allow custom response headers. Everything is served from this origin;
-  the only outbound connection is the enquiry form's relay.
+  the only outbound connection is the enquiry forms' relay.
 -->
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
@@ -50,19 +53,19 @@
   "@type": "ProfessionalService",
   "name": "Ghazal — Digital Solutions",
   "url": "https://digital.ghazalcode.ch/",
-  "description": "Custom mobile apps, websites and data-entry systems for small businesses in Switzerland and Lebanon.",
+  "description": "Custom apps, websites and data-entry systems for small businesses, plus fixing, upgrading and automating existing tools.",
   "email": "nadimghazal71@gmail.com",
   "founder": { "@type": "Person", "name": "Nadim Ghazal" },
   "address": { "@type": "PostalAddress", "addressLocality": "Zurich", "addressCountry": "CH" },
-  "areaServed": ["CH", "LB"],
+  "areaServed": "CH",
   "knowsLanguage": ["en", "de", "ar"]
 }
 </script>
 
 <link rel="stylesheet" href="assets/fonts/poppins.css">
 <!-- The ?v= token is a cache buster: GitHub Pages serves files with a 10-minute
-     cache, so bump it whenever style.css, content.js or script.js changes. -->
-<link rel="stylesheet" href="style.css?v=20261111a">
+     cache, so bump it on every page whenever a shared file changes. -->
+<link rel="stylesheet" href="style.css?v=20261111c">
 </head>
 <body>
 
@@ -89,9 +92,10 @@
       <h1 id="heroTitle"></h1>
       <p class="hero-text" id="heroText"></p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary" id="heroCallBtn"></a>
-        <a href="#contact" class="btn btn-outline" id="heroEnquiryBtn"></a>
+        <a href="#fix" class="btn btn-primary" id="heroFixBtn"></a>
+        <a href="#build" class="btn btn-outline" id="heroBuildBtn"></a>
       </div>
+      <p class="hero-call"><span id="heroCallPrefix"></span> <a class="btn btn-link" id="heroCallBtn" href="#contact"></a></p>
       <ul class="hero-facts" id="heroFacts"></ul>
     </div>
   </section>
@@ -101,7 +105,7 @@
       <span class="tag" id="servicesTag"></span>
       <h2 id="servicesHeading"></h2>
     </div>
-    <div class="services-grid" id="servicesGrid"></div>
+    <div class="paths-grid" id="servicesGrid"></div>
   </section>
 
   <section id="work" class="section">
@@ -122,12 +126,12 @@
     <ol class="steps" id="processSteps"></ol>
   </section>
 
-  <section id="markets" class="section">
+  <section id="why" class="section">
     <div class="section-head">
-      <span class="tag" id="marketsTag"></span>
-      <h2 id="marketsHeading"></h2>
+      <span class="tag" id="whyTag"></span>
+      <h2 id="whyHeading"></h2>
     </div>
-    <div class="markets-grid" id="marketsGrid"></div>
+    <div class="why-grid" id="whyGrid"></div>
   </section>
 
   <section id="about" class="section">
@@ -150,29 +154,17 @@
     <div class="section-head">
       <span class="tag" id="contactTag"></span>
       <h2 id="contactHeading"></h2>
+      <p class="section-intro" id="contactText"></p>
     </div>
     <div class="contact-wrap">
-      <div class="contact-info">
-        <p class="contact-text" id="contactText"></p>
+      <div class="contact-forms">
+        <div class="form-tabs" id="formTabs" role="tablist"></div>
+        <div id="formsWrap"></div>
+      </div>
+      <aside class="contact-info">
         <a class="btn btn-primary call-btn" id="contactCallBtn" href="#contact"></a>
         <ul class="contact-details" id="contactDetails"></ul>
-      </div>
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <label class="sr-only" for="formName" id="labelName"></label>
-          <input type="text" name="name" id="formName" autocomplete="name" required>
-          <label class="sr-only" for="formEmail" id="labelEmail"></label>
-          <input type="email" name="email" id="formEmail" autocomplete="email" required>
-        </div>
-        <label class="sr-only" for="formCompany" id="labelCompany"></label>
-        <input type="text" name="company" id="formCompany" autocomplete="organization">
-        <label class="sr-only" for="formMessage" id="labelMessage"></label>
-        <textarea name="message" id="formMessage" rows="5" required></textarea>
-        <!-- Spam trap: hidden from people, irresistible to bots. Handled in script.js. -->
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="honeypot">
-        <button type="submit" class="btn btn-primary" id="formSubmit"></button>
-        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
-      </form>
+      </aside>
     </div>
   </section>
 
@@ -185,9 +177,10 @@
     <span aria-hidden="true">·</span>
     <a href="https://ghazalcode.ch/" id="footerPortfolio" target="_blank" rel="noopener"></a>
   </p>
+  <p class="footer-region"><span id="footerRegion"></span> <a id="footerRegionLink" href="./?region=lb"></a></p>
 </footer>
 
-<script src="content.js?v=20261111a"></script>
-<script src="script.js?v=20261111a"></script>
+<script src="content.js?v=20261111c"></script>
+<script src="script.js?v=20261111c"></script>
 </body>
 </html>

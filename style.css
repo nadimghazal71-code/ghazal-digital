@@ -46,6 +46,11 @@ body {
 .blob-2 { width: 500px; height: 500px; background: var(--secondary); top: 30%; right: -180px; }
 .blob-3 { width: 380px; height: 380px; background: var(--accent-2); bottom: -150px; left: 20%; }
 
+/* The hidden attribute is just display:none at the lowest priority, so any
+   display rule (like .enquiry-form's flex) silently overrides it. This keeps
+   hidden actually hidden — it's what the form tabs rely on. */
+[hidden] { display: none !important; }
+
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, p { margin-top: 0; }
@@ -177,6 +182,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .btn-outline { background: transparent; color: var(--text); border: 2px solid rgba(255,255,255,0.25); }
 .btn-outline:hover { border-color: var(--accent); }
+.btn-whatsapp { background: #25d366; color: #0b2e1a; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
+/* A text-style link for the secondary "or book a call" action under the hero buttons */
+.btn-link {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,255,255,0.35);
+  border-radius: 0;
+}
+.btn-link:hover { transform: none; border-color: var(--accent); }
+/* .btn-link above strips the background, so the WhatsApp variant restores it */
+.btn-link.btn-whatsapp {
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 0;
+  background: #25d366;
+  color: #0b2e1a;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+.btn-link.btn-whatsapp:hover { transform: translateY(-2px); }
+.hero-call { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: var(--text-dim); margin: -12px 0 28px; }
 
 /* Shared section layout */
 .section {
@@ -205,19 +232,37 @@ section[id] { scroll-margin-top: 80px; }
 .section-head h2, .about-body h2 { font-size: clamp(1.7rem, 3.8vw, 2.5rem); line-height: 1.2; margin: 0; }
 .section-intro { color: var(--text-dim); max-width: 70ch; margin: 10px 0 0; line-height: 1.7; }
 
-/* Services */
-.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--grid-gap); }
-.service-card {
+/* Services — the two paths, each ending in a button that opens its form */
+.paths-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--grid-gap); }
+.path-card {
   background: var(--card);
   border-radius: var(--radius);
-  padding: 30px 28px;
+  padding: 32px 30px;
   border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
   transition: transform 0.25s, box-shadow 0.25s;
 }
-.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-.service-icon { font-size: 2.2rem; margin-bottom: 14px; }
-.service-card h3 { margin: 0 0 8px; font-size: 1.2rem; }
-.service-card p { color: var(--text-dim); margin: 0; font-size: 0.95rem; line-height: 1.7; }
+.path-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+/* The first path is the lead offer, so it gets the tinted treatment */
+.path-card--fix {
+  background: linear-gradient(135deg, rgba(37,99,235,0.18), rgba(124,58,237,0.10)), var(--card);
+  border-color: rgba(124,58,237,0.35);
+}
+.path-icon { font-size: 2.4rem; margin-bottom: 14px; }
+.path-card h3 { margin: 0 0 6px; font-size: 1.35rem; }
+.path-lead { color: var(--text); margin: 0 0 16px; font-weight: 500; line-height: 1.6; }
+.path-points { margin: 0 0 24px; }
+.path-points li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.path-points li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-2); font-weight: 700; }
+.path-cta { margin-top: auto; align-self: flex-start; }
 
 /* Work */
 .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--grid-gap); }
@@ -268,33 +313,17 @@ section[id] { scroll-margin-top: 80px; }
 .step h3 { margin: 0 0 8px; font-size: 1.15rem; }
 .step p { color: var(--text-dim); margin: 0; font-size: 0.93rem; line-height: 1.7; }
 
-/* Markets */
-.markets-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--grid-gap); }
-.market-card {
+/* Why work with me */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-gap); }
+.why-card {
   background: var(--card);
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 26px 24px;
   border: 1px solid rgba(255,255,255,0.06);
 }
-.market-card h3 { margin: 0 0 14px; font-size: 1.2rem; }
-.market-flag { margin-right: 6px; }
-.market-points li {
-  position: relative;
-  padding-left: 22px;
-  margin-bottom: 10px;
-  color: var(--text-dim);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.market-points li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-2); font-weight: 700; }
-.arabic {
-  margin: 18px 0 0;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  color: var(--text);
-  font-size: 1.05rem;
-  line-height: 1.9;
-}
+.why-icon { font-size: 1.9rem; margin-bottom: 12px; }
+.why-card h3 { margin: 0 0 8px; font-size: 1.08rem; }
+.why-card p { color: var(--text-dim); margin: 0; font-size: 0.92rem; line-height: 1.65; }
 
 /* About */
 .about-wrap { display: flex; align-items: center; gap: clamp(24px, 5vw, 56px); }
@@ -312,11 +341,41 @@ section[id] { scroll-margin-top: 80px; }
 .about-body .tag { margin-bottom: 12px; }
 .about-text { color: var(--text-dim); line-height: 1.85; font-size: 1.02rem; margin: 14px 0 0; max-width: 62ch; }
 
-/* Contact */
-.contact-wrap { display: flex; gap: 40px; flex-wrap: wrap; }
-.contact-info { flex: 1; min-width: 260px; }
-.contact-text { color: var(--text-dim); line-height: 1.8; font-size: 1.05rem; margin: 0 0 22px; }
-.call-btn { margin-bottom: 26px; }
+/* Contact — tabbed forms on the left, direct contact on the right */
+.contact-wrap { display: grid; grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr); gap: 36px; align-items: start; }
+.contact-info { display: flex; flex-direction: column; }
+.call-btn { margin-bottom: 20px; text-align: center; }
+
+.form-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 5px;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+.form-tab {
+  flex: 1;
+  background: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: var(--text-dim);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.form-tab:hover { color: var(--text); }
+.form-tab.is-active { background: linear-gradient(90deg, var(--primary), var(--secondary)); color: #fff; }
+.form-intro { color: var(--text-dim); margin: 0 0 16px; line-height: 1.6; }
+.enquiry-form { display: flex; flex-direction: column; gap: 16px; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+.field { grid-column: 1 / -1; display: flex; }
+.field--half { grid-column: auto; }
+.field > input, .field > textarea, .field > select { flex: 1; min-width: 0; }
 .contact-details { display: flex; flex-direction: column; gap: 14px; }
 .contact-details li {
   display: flex;
@@ -330,12 +389,9 @@ section[id] { scroll-margin-top: 80px; }
   flex-wrap: wrap;
 }
 .detail-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-2); }
-.contact-details a, .contact-details span:last-child { color: var(--text); font-weight: 500; }
+.contact-details a, .contact-details span:last-child { color: var(--text); font-weight: 500; overflow-wrap: anywhere; }
 .contact-details a:hover { color: var(--accent); }
-.contact-form { flex: 2; min-width: 280px; display: flex; flex-direction: column; gap: 16px; }
-.form-row { display: flex; gap: 16px; flex-wrap: wrap; }
-.form-row input { flex: 1; min-width: 200px; }
-.contact-form input, .contact-form textarea {
+.enquiry-form input, .enquiry-form textarea, .enquiry-form select {
   background: var(--card);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 12px;
@@ -345,9 +401,23 @@ section[id] { scroll-margin-top: 80px; }
   font-size: 0.95rem;
   resize: vertical;
 }
-.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--secondary); }
-.contact-form button { align-self: flex-start; }
-.contact-form button:disabled { opacity: 0.6; cursor: progress; }
+.enquiry-form input::placeholder, .enquiry-form textarea::placeholder { color: #8f8db3; }
+/* Native dropdowns, restyled to match: custom arrow, dim until a choice is made */
+.enquiry-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 42px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23b6b4d6' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+}
+/* Dim while the placeholder is still selected — required or optional alike */
+.enquiry-form select:has(option[value=""]:checked) { color: #8f8db3; }
+.enquiry-form option { background: var(--bg-soft); color: var(--text); }
+.enquiry-form input:focus, .enquiry-form textarea:focus, .enquiry-form select:focus { outline: none; border-color: var(--secondary); }
+.enquiry-form button { align-self: flex-start; }
+.enquiry-form button:disabled { opacity: 0.6; cursor: progress; }
 .form-note { color: var(--text-dim); font-size: 0.9rem; margin: 0; min-height: 1.2em; }
 .form-note.is-success { color: var(--accent-2); }
 .form-note.is-error { color: #f87171; }
@@ -373,6 +443,10 @@ section[id] { scroll-margin-top: 80px; }
 .footer-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .footer-links a { border-bottom: 1px solid rgba(255,255,255,0.2); }
 .footer-links a:hover { color: var(--text); border-color: var(--accent); }
+.footer-region { margin-top: 6px; font-size: 0.8rem; }
+.footer-region a { border-bottom: 1px solid rgba(255,255,255,0.2); }
+.footer-region a:hover { color: var(--text); border-color: var(--accent); }
+.work-grid--single { grid-template-columns: minmax(0, 640px); }
 
 /* Legal page */
 .legal { max-width: 780px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) var(--section-x); position: relative; z-index: 1; }
@@ -387,6 +461,14 @@ section[id] { scroll-margin-top: 80px; }
 .legal .back:hover { color: var(--text); }
 
 /* Responsive */
+@media (max-width: 1000px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  /* minmax(0, …), not 1fr: a plain 1fr column won't shrink below its widest
+     content, and a <select> is as wide as its longest option — which pushed
+     the forms past the edge of a phone screen. */
+  .contact-wrap { grid-template-columns: minmax(0, 1fr); }
+}
+
 @media (max-width: 900px) {
   .steps { grid-template-columns: 1fr; }
 }
@@ -407,7 +489,8 @@ section[id] { scroll-margin-top: 80px; }
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .logo small { display: none; }
-  .services-grid, .work-grid, .markets-grid { grid-template-columns: 1fr; }
+  .paths-grid, .work-grid, .work-grid--single, .why-grid, .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .form-tabs { flex-direction: column; }
   .about-wrap { flex-direction: column; align-items: flex-start; }
   .about-photo { width: 160px; height: 160px; border-radius: 28px; }
   .about-photo img { border-radius: 23px; }
@@ -418,5 +501,5 @@ section[id] { scroll-margin-top: 80px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
-  .btn:hover, .service-card:hover { transform: none; }
+  .btn:hover, .path-card:hover { transform: none; }
 }
