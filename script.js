@@ -107,7 +107,8 @@ function renderWork() {
       ${w.demo ? `<a href="${w.demo}" class="work-link" target="_blank" rel="noopener">${c.demoLabel}</a>` : ""}
     </div>
   `).join("");
-  $("workGrid").classList.toggle("work-grid--single", c.items.length === 1);
+  // The grid's column count follows the number of examples (see style.css)
+  $("workGrid").dataset.count = c.items.length;
 }
 
 function renderProcess() {

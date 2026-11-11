@@ -74,9 +74,14 @@ const CONTENT = {
     work: {
       tag: "Shoghlna",
       heading: "Systems 7a2i2iye, 3am tishteghel",
-      intro: "Hayda masalan system 3melne la ma7al sayyarat — kel shi ken 3al wara2.",
+      intro: "Hawde systems 3melnehon la ma7allat kenet tishteghel 3al wara2 w el Excel.",
       demoLabel: "Jarrebo ↗",
       items: [
+        {
+          title: "Wasl tasleem w 7sebet el shahr la laundry",
+          text: "Laundry bikhdom 2arib el 30 mat3am w otel, ken 3endo Excel la kel zbun kel shahr, w el tasleemet maktoube 3al telephone. Hala2 el staff bisajjel kel tasleeme 3al telephone: el app btitba3 wasl el tasleem dagre, w bt3abbe el Excel el shahri la kel zbun la7ala — metl el files el 2adime bel zabt, w jehze lal mo7aseb.",
+          tags: ["Android w iPhone", "Bala internet", "Excel", "Wasl tasleem"]
+        },
         {
           title: "Tasjil test drive la ma7al sayyarat",
           text: "El staff bisajjel kel test drive 3al telephone: soura lal ruksa, el ma3loumet, imda bel isba3, w 3a2d jehez lal tab3a. Ma ba2a fi wara2, w byeshteghel 7atta bala internet.",

@@ -437,7 +437,9 @@ section[id] { scroll-margin-top: 80px; }
 .footer-region { margin-top: 6px; font-size: 0.8rem; }
 .footer-region a { border-bottom: 1px solid rgba(255,255,255,0.2); }
 .footer-region a:hover { color: var(--text); border-color: var(--accent); }
-.work-grid--single { grid-template-columns: minmax(0, 640px); }
+/* Column count follows the number of examples, so none is left alone on a row */
+.work-grid[data-count="1"] { grid-template-columns: minmax(0, 640px); }
+.work-grid[data-count="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 /* Legal page */
 .legal { max-width: 780px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) var(--section-x); position: relative; z-index: 1; }
@@ -458,6 +460,8 @@ section[id] { scroll-margin-top: 80px; }
      content, and a <select> is as wide as its longest option — which pushed
      the forms past the edge of a phone screen. */
   .contact-wrap { grid-template-columns: minmax(0, 1fr); }
+  /* Three examples don't split evenly into two columns, so they stack */
+  .work-grid[data-count="3"] { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -480,7 +484,7 @@ section[id] { scroll-margin-top: 80px; }
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .logo small { display: none; }
-  .paths-grid, .work-grid, .work-grid--single, .why-grid, .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .paths-grid, .work-grid, .work-grid[data-count], .why-grid, .form-grid { grid-template-columns: minmax(0, 1fr); }
   .form-tabs { flex-direction: column; }
   .contact-details li { flex-direction: column; align-items: flex-start; }
 }

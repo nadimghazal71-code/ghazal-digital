@@ -90,6 +90,11 @@ const CONTENT = {
       demoLabel: "Live demo ↗",
       items: [
         {
+          title: "Delivery slips & monthly billing for a commercial laundry",
+          text: "A laundry in the Zurich area serving around 30 restaurants, hotels and gyms kept a separate Excel file per client per month, plus daily notes on a phone. Now staff enter each delivery on a phone: the app prints the delivery slip on the spot and fills in every client's monthly Excel automatically — identical to the old files, ready for the accountant.",
+          tags: ["Android & iPhone", "Works offline", "Excel export", "Delivery slips", "German / English"]
+        },
+        {
           title: "Test-drive registration for a car dealership",
           text: "Staff register each test drive on a phone: driver's licence photo, details, a finger-drawn signature, and a ready-to-print agreement. It replaced paper forms, works offline, and runs on Android and in the browser.",
           tags: ["Android", "Web", "Works offline", "Print / PDF"]
@@ -251,6 +256,11 @@ const CONTENT = {
       intro: "Einige Beispiele aus unserer Arbeit. Jedes begann als Papier- oder Excel-Prozess.",
       demoLabel: "Live-Demo ↗",
       items: [
+        {
+          title: "Lieferscheine & Monatsabrechnung für eine Wäscherei",
+          text: "Eine Wäscherei im Raum Zürich mit rund 30 Kunden aus Gastronomie, Hotellerie und Fitness führte pro Kunde und Monat eine eigene Excel-Datei und notierte die Tageslieferungen im Handy. Heute erfasst das Team jede Lieferung auf dem Handy: Die App druckt den Lieferschein sofort und füllt die monatliche Excel-Datei jedes Kunden automatisch aus — identisch mit den bisherigen Dateien und bereit für die Treuhand.",
+          tags: ["Android & iPhone", "Offline nutzbar", "Excel-Export", "Lieferscheine", "Deutsch / Englisch"]
+        },
         {
           title: "Probefahrt-Erfassung für ein Autohaus",
           text: "Das Team erfasst jede Probefahrt auf dem Handy: Foto des Führerausweises, Angaben, Unterschrift mit dem Finger und ein druckfertiger Vertrag. Es ersetzte Papierformulare, funktioniert offline und läuft auf Android und im Browser.",
