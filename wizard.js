@@ -4,7 +4,7 @@
 
     1. category  — one of six big tiles (tapping one moves on)
     2. details   — the options for that category, several allowed
-    3. timing    — timeline and budget, both optional
+    3. timing    — when it's needed (optional)
     4. contact   — a summary, name + WhatsApp number, then send through the
                    form relay, or open WhatsApp with the request typed out
 
@@ -20,7 +20,7 @@
   const dlg = $("wizard");
   const inner = $("wizardInner");
   const STEPS = ["category", "details", "timing", "contact"];
-  const fresh = () => ({ step: 0, category: null, details: new Set(), timeline: null, budget: null, name: "", phone: "", note: "", done: false });
+  const fresh = () => ({ step: 0, category: null, details: new Set(), timeline: null, name: "", phone: "", note: "", done: false });
   let s = fresh();
 
   const w = () => t().wizard;
@@ -34,7 +34,6 @@
     const picked = [...s.details].sort().map(i => k.details[i]);
     if (picked.length) lines.push(`${labels.details}: ${picked.join(", ")}`);
     if (s.timeline !== null) lines.push(`${labels.timeline}: ${c.timeline[s.timeline]}`);
-    if (s.budget !== null) lines.push(`${labels.budget}: ${c.budget[s.budget]}`);
     return lines;
   }
 
@@ -65,11 +64,7 @@
       case "details":
         return `<div class="wizard-chips">${cat().details.map((d, i) => chip("data-detail", i, d, s.details.has(i))).join("")}</div>`;
       case "timing":
-        return `
-          <p class="wizard-group-label">${c.timing.timeline}</p>
-          <div class="wizard-chips">${c.timeline.map((x, i) => chip("data-timeline", i, x, s.timeline === i)).join("")}</div>
-          <p class="wizard-group-label">${c.timing.budget}</p>
-          <div class="wizard-chips">${c.budget.map((x, i) => chip("data-budget", i, x, s.budget === i)).join("")}</div>`;
+        return `<div class="wizard-chips">${c.timeline.map((x, i) => chip("data-timeline", i, x, s.timeline === i)).join("")}</div>`;
       case "contact": {
         const k = cat();
         return `
@@ -78,7 +73,6 @@
             <p><strong>${k.icon} ${esc(k.title)}</strong></p>
             <p>${[...s.details].sort().map(i => esc(k.details[i])).join(" · ")}</p>
             ${s.timeline !== null ? `<p>${c.wa.timeline}: <strong>${esc(c.timeline[s.timeline])}</strong></p>` : ""}
-            ${s.budget !== null ? `<p>${c.wa.budget}: <strong>${esc(c.budget[s.budget])}</strong></p>` : ""}
           </div>
           <form class="wizard-form" id="wizardForm" novalidate>
             <div class="wizard-fields">
@@ -185,14 +179,11 @@
       inner.querySelector("[data-next]").disabled = s.details.size === 0;
       return;
     }
-    // Timeline and budget are single choices; tapping the selected one clears it
-    for (const key of ["timeline", "budget"]) {
-      if (el.dataset[key] !== undefined) {
-        const i = Number(el.dataset[key]);
-        s[key] = s[key] === i ? null : i;
-        inner.querySelectorAll(`[data-${key}]`).forEach(b => b.setAttribute("aria-pressed", s[key] === Number(b.dataset[key])));
-        return;
-      }
+    // Timeline is a single choice; tapping the selected one clears it
+    if (el.dataset.timeline !== undefined) {
+      const i = Number(el.dataset.timeline);
+      s.timeline = s.timeline === i ? null : i;
+      inner.querySelectorAll("[data-timeline]").forEach(b => b.setAttribute("aria-pressed", s.timeline === Number(b.dataset.timeline)));
     }
   });
 
@@ -228,7 +219,6 @@
       category: k.title,
       details: [...s.details].sort().map(i => k.details[i]).join(", "),
       timeline: s.timeline !== null ? c.timeline[s.timeline] : "",
-      budget: s.budget !== null ? c.budget[s.budget] : "",
       message: s.note.trim(),
       _subject: c.subject,
       _template: "table",
