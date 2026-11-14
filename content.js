@@ -34,15 +34,15 @@ const CONTENT = {
     htmlLang: "ar-Latn",
     meta: {
       title: "Ghazal — Digital Solutions | Apps, websites w systems la shoghlak",
-      description: "Bala wara2, bala Excel, w bala wja3 ras. Mna3mellak apps, websites w systems 3a2ad shoghlak — w iza 3andak shi 3atlan aw 3am yekol wa2tak, mnsalle7o w mnkhallih yemshi la7alo."
+      description: "Bala wra2, bala Excel, w bala waja3 ras. Mna3mellak apps, websites w systems 3a2ad shoghlak — w iza 3andak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!."
     },
-    nav: [["#services", "Shu mna3mel"], ["#work", "Shoghlna"], ["#process", "Kif mnshteghel"], ["#contact", "7kina"]],
+    nav: [["#services", "Shu mna3mel"], ["#work", "sheghelna"], ["#process", "Kif mnshteghel"], ["#contact", "7kina"]],
     langSwitch: { aria: "Show the English version" },
-    call: { label: "7kina 3al WhatsApp", href: wa("Marhaba, shefet el website w badde es2al 3an shi la shoghle."), style: "whatsapp" },
+    call: { label: "7kina 3al WhatsApp", href: wa("Marhaba, shefet el website w badde es2al 3an shi la sheghle."), style: "whatsapp" },
 
     hero: {
       eyebrow: "Ghazal — Digital Solutions",
-      title: "Bala wara2, bala Excel, w bala wja3 ras.",
+      title: "Bala wra2, bala Excel, w bala waja3 ras.",
       text: "Mna3mellak app, website aw system 3a2ad shoghlak: el staff bisajjlo kel shi 3al telephone, w enta btshouf kel shi 3a wa2to. W iza 3andak shi 3atlan aw 3am yekol wa2tak, mnsalle7o w mnkhallih yemshi la7alo.",
       callPrefix: "aw",
       facts: ["Byeshteghel 7atta bala internet", "3arabe · English", "Ass3ar wad7a men el bidaye"]
@@ -58,7 +58,7 @@ const CONTENT = {
       back: "← Rje3",
       next: "Kammel →",
       stepLabel: "Khatwe {n} men {total}",
-      category: { q: "Shu 3am tdawwer 3le?", hint: "Ekhtar wa7ad." },
+      category: { q: "3a shu 3am tdawwer?", hint: "Ekhtar wa7ad." },
       details: { q: "Shu baddo ya3mel?", hint: "Ekhtar kel shi byenteb2." },
       timing: { q: "Emta baddak yeh?", hint: "Iza mish akid, fik tetrok w tkammel." },
       contact: { q: "Ra7 nkhallis — wen fina n7kik?", summary: "Talabak", name: "Esmak", phone: "Ra2m el WhatsApp", note: "Fi shi tene? (optional)", send: "B3at", whatsapp: "Aw b3at 3al WhatsApp" },
@@ -87,17 +87,17 @@ const CONTENT = {
 
     services: {
       tag: "Shu mna3mel",
-      heading: "Tnen tor2 la ykhaff 3annak el shoghl",
+      heading: "El baddak eyye",
       paths: [
         {
           id: "fix",
           icon: "🛠️",
           title: "Mnsalle7, mntawwer w mna3mel automation",
-          lead: "3andak system, website aw Excel, bas mish 3am yemshi metl ma lazem?",
+          lead: "3andak system, website aw Excel, bas mish 3am yemshi metl ma lezem?",
           points: [
             "Website bati2 aw 3atlan? Mnsalle7o.",
             "System 2adim? Mnjaddo w mnzidlo li na2so.",
-            "Shoghl byetkarrar kel yom — fawater, ta2arir, data entry? Mnkhallih yemshi la7alo.",
+            "Shoghl byetkarrar kel yom — fawater, ta2arir, data entry? Mnkhalli yemshi la7alo.",
             "Programs ma 3am ye7ko ba3don? Mnwasselon ma3 ba3d."
           ],
           cta: "Khabbirna shu el meshkle →"
@@ -110,8 +110,9 @@ const CONTENT = {
           points: [
             "App lal staff ysajjlo el stock, el talabiyet w el zbeyen 3al telephone",
             "Website bijiblak zbeyen, bel 3arabe w bel English",
-            "Systems lal ma7al byeshteghlo 7atta lamma ta3ti2 el kahraba aw el internet",
-            "Dashboard la tshouf el mabi3at w el stock 3a wa2ton"
+            "Systems lal ma7al byeshteghlo 7atta lamma tun2ute3 el kahraba aw el internet",
+            "Dashboard la tshouf el mabi3at w el stock 3a wa2ton",
+            "w Aktar!"
           ],
           cta: "Yalla nballesh →"
         }
@@ -148,7 +149,7 @@ const CONTENT = {
 
     why: {
       tag: "Lesh ne7na",
-      heading: "Ma3moul la shoghl Lebnen",
+      heading: "Kelfe madruse, sheghel sari3, support men ba3d l sheghel",
       items: [
         { icon: "⚡", title: "Byeshteghel bala internet", text: "Ra7et el kahraba? 2ata3 el internet? El system bikammel, w bi3mel sync lamma yerja3 el khatt." },
         { icon: "💬", title: "3al WhatsApp", text: "El talabiyet, el fawater w el ta2arir bewsalo 3al WhatsApp — matra7 ma enta w zbeynak 3ayshin aslan." },
@@ -159,14 +160,14 @@ const CONTENT = {
 
     about: {
       tag: "Meen ne7na",
-      heading: "Ahla w sahla 3and Ghazal",
-      text: "Ne7na Ghazal — Digital Solutions: mna3mel w mnsalle7 software 3amali lal ma7allat w el sharikat el zghire. Khebretna men software el bnouk w el fintech, mahall ma kel ra2em byefre2. Mn7ke ma3ak bel lugha li btefhama, w mnkoun ma3ak men awwal 7ake la ekher tasli7."
+      heading: "Ahla w sahla 3end Ghazal Digital",
+      text: "Ne7na Ghazal — Digital Solutions: mna3mel w mnsalle7 software 3amali lal ma7allat w el sharikat el zghire. Khebretna men software el bnouk w el fintech, mahall ma kel ra2em byefre2. Mn7ke ma3ak bel lugha li btefhama, w mnkoun ma3ak men el awwal lal ekher."
     },
 
     contact: {
       tag: "7kina",
-      heading: "Khabbirna shu baddak",
-      text: "Fikra 3al sari3 bteke. Ekhtar el form li byenesbak w ektebelna kam satr — aw b3atelna direct 3al WhatsApp.",
+      heading: "Khabberna shu baddak",
+      text: "fekra 3al sari3 bteke. Ekhtar el form li byenesbak w ektebelna kam satr — aw b3atelna direct 3al WhatsApp.",
       details: [
         { label: "WhatsApp", value: "B3atelna resele", href: wa("Marhaba, shefet el website w badde es2al 3an shi la shoghle.") }
       ],
