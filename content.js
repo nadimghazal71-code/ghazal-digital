@@ -44,10 +44,46 @@ const CONTENT = {
       eyebrow: "Ghazal — Digital Solutions",
       title: "Bala wara2, bala Excel, w bala wja3 ras.",
       text: "Mna3mellak app, website aw system 3a2ad shoghlak: el staff bisajjlo kel shi 3al telephone, w enta btshouf kel shi 3a wa2to. W iza 3andak shi 3atlan aw 3am yekol wa2tak, mnsalle7o w mnkhallih yemshi la7alo.",
-      fixBtn: "Badde salle7 shi",
-      buildBtn: "Badde app aw website",
       callPrefix: "aw",
       facts: ["Byeshteghel 7atta bala internet", "3arabe · English", "Ass3ar wad7a men el bidaye"]
+    },
+
+    // The guided picker ("Sa3edne ekhtar"): 4 short steps instead of a form.
+    // Each category's `details` are the options shown in step 2.
+    wizard: {
+      open: "Sa3edne ekhtar",
+      openHint: "Mish akid shu baddak? Jaweb 3a 3 as2ile w khalas.",
+      banner: "Mish akid ayya form? Khalline sa3dak tekhtar.",
+      close: "Sakker",
+      back: "← Rje3",
+      next: "Kammel →",
+      stepLabel: "Khatwe {n} men {total}",
+      category: { q: "Shu 3am tdawwer 3le?", hint: "Ekhtar wa7ad." },
+      details: { q: "Shu baddo ya3mel?", hint: "Ekhtar kel shi byenteb2." },
+      timing: { q: "Emta w ade?", hint: "Iza mish akid, fik tetrok w tkammel.", timeline: "Emta baddak yeh?", budget: "Budget (optional)" },
+      contact: { q: "Ra7 nkhallis — wen fina n7kik?", summary: "Talabak", name: "Esmak", phone: "Ra2m el WhatsApp", note: "Fi shi tene? (optional)", send: "B3at", whatsapp: "Aw b3at 3al WhatsApp" },
+      categories: [
+        { id: "website", icon: "🌐", title: "Website", text: "Tkoun mawjoud online w tjib zbeyen",
+          details: ["Safha bta3rruf 3an shoghle", "Online shop / talabiyet", "7ajez w mawa3id", "Menu aw catalogue lal products"] },
+        { id: "app", icon: "📱", title: "App", text: "Lal staff aw lal zbeyen",
+          details: ["Lal staff ysajjlo stock, talabiyet aw tasleem", "Lal zbeyen yotlobo aw ye7jzo", "Points w offers lal zbeyen", "Byeshteghel bala internet"] },
+        { id: "both", icon: "🔗", title: "Website + App", text: "Kel shi byeshteghel ma3 ba3do",
+          details: ["El zbun byotlob online w el staff bit2abba3 bel app", "7ajez online, w el idara men el telephone", "Catalogue 3al website w talabiyet bel app", "Ma ba3ref ba3d — sa3edne khattet"] },
+        { id: "billing", icon: "🧾", title: "Fawater w 7sebet", text: "Fawater, wusulat w meen 3leh masari",
+          details: ["Fawater w wusulat jehze lal tab3a", "Shouf meen 3leh masari", "Kashf 7sab shahri la kel zbun", "Export lal mo7aseb"] },
+        { id: "system", icon: "⚙️", title: "System lal shoghl", text: "Stock, talabiyet w staff b mahall wa7ad",
+          details: ["Stock w inventory", "Talabiyet w tasleem", "Zbeyen w follow-up", "Staff, shifts w mahamm", "Dashboard w ta2arir"] },
+        { id: "fix", icon: "🛠️", title: "Tasli7 aw ta7sin", text: "Shi 3andak mish 3am yemshi mni7",
+          details: ["El website bati2 aw 3atlan", "El app fiya mashekel", "El Excel tafaj", "Automation la shoghl byetkarrar kel yom", "Wassel programs ma 3am ye7ko ba3don"] }
+      ],
+      timeline: ["Bi2a2rab wa2et", "Khilel 1–3 ishhor", "Ma fi 3ajle"],
+      budget: ["Ta7t $500", "$500–$1,500", "$1,500–$5,000", "Aktar men $5,000", "Ma ba3ref ba3d"],
+      subject: "Guided request — Ghazal Digital",
+      required: "Kteb esmak w ra2m el WhatsApp.",
+      sending: "3am yetb3at…",
+      done: { title: "Wosolet! 🎉", text: "Mnb3atlak 3al WhatsApp b2a2rab wa2et.", close: "Tamem" },
+      error: "Fi shi ma zabat. Jarreb kamen marra, aw b3at 3al WhatsApp.",
+      wa: { intro: "Marhaba! 3abbet el guide 3al website.", category: "Baddi", details: "Lazem ya3mel", timeline: "Emta", budget: "Budget", name: "Esme", note: "Mula7aza" }
     },
 
     services: {
@@ -200,10 +236,44 @@ const CONTENT = {
       eyebrow: "Ghazal — Digital Solutions",
       title: "No paper. No Excel. No headache.",
       text: "We build apps, websites and systems around the way you work: your staff log everything on their phones, and you see it all in real time. And if something's broken or eating your time, we fix it and make it run itself.",
-      fixBtn: "Fix something",
-      buildBtn: "Get an app or website",
       callPrefix: "or",
       facts: ["Works even without internet", "English · 3arabe", "Clear prices from day one"]
+    },
+
+    wizard: {
+      open: "Help me choose",
+      openHint: "Not sure what you need? Answer 3 quick questions.",
+      banner: "Not sure which form? Let us help you choose.",
+      close: "Close",
+      back: "← Back",
+      next: "Next →",
+      stepLabel: "Step {n} of {total}",
+      category: { q: "What are you looking for?", hint: "Pick one." },
+      details: { q: "What should it do?", hint: "Pick everything that applies." },
+      timing: { q: "When, and roughly how much?", hint: "Not sure? Skip ahead.", timeline: "When do you need it?", budget: "Budget (optional)" },
+      contact: { q: "Almost done — where can we reach you?", summary: "Your request", name: "Your name", phone: "WhatsApp number", note: "Anything else? (optional)", send: "Send request", whatsapp: "Or send it on WhatsApp" },
+      categories: [
+        { id: "website", icon: "🌐", title: "Website", text: "Be found online and get customers",
+          details: ["A page that presents my business", "Online shop / take orders", "Bookings & appointments", "Menu or product catalogue"] },
+        { id: "app", icon: "📱", title: "App", text: "For your staff or your customers",
+          details: ["For my staff to log stock, orders or deliveries", "For my customers to order or book", "Loyalty points & offers", "Works without internet"] },
+        { id: "both", icon: "🔗", title: "Website + App", text: "Everything working together",
+          details: ["Customers order online, staff handle it in the app", "Bookings online, managed from a phone", "Catalogue on the site, orders in the app", "Not sure yet — help me plan it"] },
+        { id: "billing", icon: "🧾", title: "Billing & invoices", text: "Invoices, receipts and who owes what",
+          details: ["Print-ready invoices & receipts", "Track who owes me money", "Monthly statement per client", "Export for the accountant"] },
+        { id: "system", icon: "⚙️", title: "Business system", text: "Stock, orders and staff in one place",
+          details: ["Stock & inventory", "Orders & deliveries", "Customers & follow-ups", "Staff, shifts & tasks", "Dashboard & reports"] },
+        { id: "fix", icon: "🛠️", title: "Fix or improve", text: "Something you have isn't working well",
+          details: ["My website is slow or broken", "My app has problems", "My Excel is out of control", "Automate work we repeat every day", "Connect programs that don't talk"] }
+      ],
+      timeline: ["As soon as possible", "Within 1–3 months", "No rush"],
+      budget: ["Under $500", "$500–$1,500", "$1,500–$5,000", "Over $5,000", "Not sure yet"],
+      subject: "Guided request — Ghazal Digital",
+      required: "Please add your name and WhatsApp number.",
+      sending: "Sending…",
+      done: { title: "Got it! 🎉", text: "We'll message you on WhatsApp shortly.", close: "Done" },
+      error: "Something went wrong. Try again, or send it on WhatsApp.",
+      wa: { intro: "Hi! I used the guide on your website.", category: "I'm looking for", details: "It should cover", timeline: "When", budget: "Budget", name: "Name", note: "Note" }
     },
 
     services: {

@@ -413,6 +413,118 @@ section[id] { scroll-margin-top: 80px; }
 .form-note.is-success { color: var(--accent-2); }
 .form-note.is-error { color: #f87171; }
 
+/* "Help me choose" — the entry points */
+.btn-guide { font-size: 1.05rem; padding: 16px 34px; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+.hero-hint { color: var(--text-dim); font-size: 0.92rem; margin: -18px 0 22px; }
+.guide-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  border: 1px dashed rgba(124,58,237,0.45);
+  background: rgba(124,58,237,0.08);
+}
+.guide-banner p { margin: 0; font-weight: 500; }
+.guide-banner .btn { padding: 10px 20px; font-size: 0.9rem; }
+
+/* The guided picker dialog */
+.wizard {
+  width: min(660px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  background: var(--bg-soft);
+  color: var(--text);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+.wizard::backdrop { background: rgba(8, 9, 20, 0.75); backdrop-filter: blur(4px); }
+body:has(.wizard[open]) { overflow: hidden; }
+.wizard-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px clamp(20px, 4vw, 34px) 26px;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+}
+.wizard-head { display: flex; justify-content: space-between; align-items: center; }
+.wizard-step { margin: 0; color: var(--accent); font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.wizard-close {
+  background: none; border: 0; cursor: pointer;
+  color: var(--text-dim); font-size: 1.25rem; line-height: 1;
+  padding: 6px 9px; border-radius: 10px;
+}
+.wizard-close:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+.wizard-progress { height: 5px; border-radius: 99px; background: rgba(255,255,255,0.08); overflow: hidden; margin-top: -8px; }
+.wizard-progress span { display: block; height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: width 0.3s ease; }
+.wizard h2 { margin: 0; font-size: clamp(1.35rem, 3.6vw, 1.7rem); line-height: 1.25; }
+.wizard h2:focus { outline: none; }
+.wizard-hint { margin: -10px 0 0; color: var(--text-dim); font-size: 0.92rem; }
+
+.wizard-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.wizard-tile {
+  display: flex; flex-direction: column; gap: 4px;
+  text-align: left; cursor: pointer;
+  padding: 16px; border-radius: 16px;
+  background: var(--card); color: var(--text); font: inherit;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.wizard-tile:hover { border-color: rgba(124,58,237,0.55); transform: translateY(-2px); }
+.wizard-tile[aria-pressed="true"] {
+  border-color: var(--secondary);
+  background: linear-gradient(135deg, rgba(37,99,235,0.22), rgba(124,58,237,0.16)), var(--card);
+}
+.wizard-tile-icon { font-size: 1.7rem; margin-bottom: 2px; }
+.wizard-tile strong { font-size: 1rem; }
+.wizard-tile-text { color: var(--text-dim); font-size: 0.83rem; line-height: 1.45; }
+
+.wizard-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.wizard-chip {
+  cursor: pointer; text-align: left;
+  padding: 11px 16px; border-radius: 999px;
+  background: var(--card); color: var(--text); font: inherit; font-size: 0.92rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: background 0.2s, border-color 0.2s;
+}
+.wizard-chip:hover { border-color: rgba(124,58,237,0.55); }
+.wizard-chip[aria-pressed="true"] { background: linear-gradient(90deg, var(--primary), var(--secondary)); border-color: transparent; color: #fff; }
+.wizard-chip[aria-pressed="true"]::before { content: "✓ "; }
+.wizard-group-label { margin: 2px 0 -6px; font-weight: 600; font-size: 0.95rem; }
+
+.wizard-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 4px; }
+.wizard-back { background: none; border: 0; cursor: pointer; padding: 8px 0; color: var(--text-dim); font: inherit; }
+.wizard-back:hover { color: var(--text); }
+
+.wizard-summary {
+  padding: 14px 18px; border-radius: 14px;
+  background: var(--card); border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text-dim); font-size: 0.9rem; line-height: 1.55;
+}
+.wizard-summary p { margin: 0 0 4px; }
+.wizard-summary p:last-child { margin-bottom: 0; }
+.wizard-summary strong { color: var(--text); }
+.wizard-summary-title { font-size: 0.75rem; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent-2) !important; font-weight: 700; }
+.wizard-form { display: flex; flex-direction: column; gap: 12px; }
+.wizard-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.wizard-form input, .wizard-form textarea {
+  min-width: 0;
+  background: var(--card); color: var(--text);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+  padding: 13px 16px; font-family: inherit; font-size: 0.95rem; resize: vertical;
+}
+.wizard-form input::placeholder, .wizard-form textarea::placeholder { color: #8f8db3; }
+.wizard-form input:focus, .wizard-form textarea:focus { outline: none; border-color: var(--secondary); }
+.wizard-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.wizard-done { text-align: center; padding: 10px 0 6px; }
+.wizard-done p { color: var(--text-dim); margin: 10px 0 22px; }
+
 /* Off-screen rather than display:none — bots skip fields that aren't rendered */
 .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 
@@ -483,6 +595,11 @@ section[id] { scroll-margin-top: 80px; }
   .logo small { display: none; }
   .paths-grid, .work-grid, .work-grid[data-count], .why-grid, .form-grid { grid-template-columns: minmax(0, 1fr); }
   .form-tabs { flex-direction: column; }
+  /* On a phone the picker becomes a full-screen sheet */
+  .wizard { width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
+  .wizard-inner { max-height: 100dvh; height: 100%; }
+  .wizard-fields { grid-template-columns: minmax(0, 1fr); }
+  .wizard-actions .btn { width: 100%; text-align: center; }
   .contact-details li { flex-direction: column; align-items: flex-start; }
 }
 

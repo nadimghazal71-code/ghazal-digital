@@ -60,7 +60,7 @@
 <link rel="stylesheet" href="assets/fonts/poppins.css">
 <!-- The ?v= token is a cache buster: GitHub Pages serves files with a 10-minute
      cache, so bump it on every page whenever a shared file changes. -->
-<link rel="stylesheet" href="style.css?v=20261114a">
+<link rel="stylesheet" href="style.css?v=20261114c">
 </head>
 <body>
 
@@ -87,9 +87,9 @@
       <h1 id="heroTitle"></h1>
       <p class="hero-text" id="heroText"></p>
       <div class="hero-actions">
-        <a href="#fix" class="btn btn-primary" id="heroFixBtn"></a>
-        <a href="#build" class="btn btn-outline" id="heroBuildBtn"></a>
+        <button type="button" class="btn btn-primary btn-guide" id="heroWizardBtn" data-wizard></button>
       </div>
+      <p class="hero-hint" id="heroWizardHint"></p>
       <p class="hero-call"><span id="heroCallPrefix"></span> <a class="btn btn-link" id="heroCallBtn" href="#contact"></a></p>
       <ul class="hero-facts" id="heroFacts"></ul>
     </div>
@@ -146,6 +146,10 @@
     </div>
     <div class="contact-wrap">
       <div class="contact-forms">
+        <div class="guide-banner">
+          <p id="guideBannerText"></p>
+          <button type="button" class="btn btn-outline" id="guideBannerBtn" data-wizard></button>
+        </div>
         <div class="form-tabs" id="formTabs" role="tablist"></div>
         <div id="formsWrap"></div>
       </div>
@@ -158,6 +162,11 @@
 
 </main>
 
+<!-- Guided picker; its contents are rendered by wizard.js -->
+<dialog class="wizard" id="wizard" aria-labelledby="wizardTitle">
+  <div class="wizard-inner" id="wizardInner"></div>
+</dialog>
+
 <footer class="footer">
   <p id="footerCopy"></p>
   <p class="footer-links">
@@ -165,7 +174,8 @@
   </p>
 </footer>
 
-<script src="content.js?v=20261114a"></script>
-<script src="script.js?v=20261114a"></script>
+<script src="content.js?v=20261114c"></script>
+<script src="script.js?v=20261114c"></script>
+<script src="wizard.js?v=20261114c"></script>
 </body>
 </html>

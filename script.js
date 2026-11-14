@@ -69,8 +69,8 @@ function renderHero() {
   $("heroEyebrow").textContent = h.eyebrow;
   $("heroTitle").textContent = h.title;
   $("heroText").textContent = h.text;
-  $("heroFixBtn").textContent = h.fixBtn;
-  $("heroBuildBtn").textContent = h.buildBtn;
+  $("heroWizardBtn").textContent = t().wizard.open;
+  $("heroWizardHint").textContent = t().wizard.openHint;
   $("heroCallPrefix").textContent = h.callPrefix;
   setCallButton($("heroCallBtn"));
   $("heroFacts").innerHTML = h.facts.map(f => `<li>${f}</li>`).join("");
@@ -190,6 +190,8 @@ function renderContact() {
   $("contactTag").textContent = c.tag;
   $("contactHeading").textContent = c.heading;
   $("contactText").textContent = c.text;
+  $("guideBannerText").textContent = t().wizard.banner;
+  $("guideBannerBtn").textContent = t().wizard.open;
   setCallButton($("contactCallBtn"));
   $("contactDetails").innerHTML = c.details.map(d => `
     <li>
