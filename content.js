@@ -15,7 +15,7 @@
     - BRAND.formEndpoint once FormSubmit has sent you an activation email, swap
                          the address here for the random alias it gives you,
                          so your Gmail address isn't in the page source
-    - contact.forms      the two enquiry forms: fields, choices, budget ranges
+    - contact.forms      the two enquiry forms: fields and choices
 */
 const BRAND = {
   name: "Ghazal — Digital Solutions",
@@ -204,10 +204,8 @@ const CONTENT = {
             { name: "business", label: "Esm el ma7al aw el sharike (optional)", type: "text", half: true, autocomplete: "organization" },
             { name: "project", label: "Shu baddak?", type: "select", required: true,
               options: ["Website jdid", "Tatwir el website li 3ande", "App jdid lal staff aw lal zbeyen", "Tatwir el app li 3ande", "System dakhile aw dashboard", "Ma ba3ref ba3d"] },
-            { name: "timeline", label: "Emta baddak yeh?", type: "select", half: true,
+            { name: "timeline", label: "Emta baddak yeh?", type: "select",
               options: ["Bi2a2rab wa2et", "Khilel 1–3 ishhor", "Ba3d shway", "Ma fi 3ajle"] },
-            { name: "budget", label: "Budget (optional)", type: "select", half: true,
-              options: ["Ta7t $500", "$500–$1,500", "$1,500–$5,000", "Aktar men $5,000", "Ma ba3ref ba3d"] },
             { name: "message", label: "Khabbirna 3an shoghlak w shu baddak ya3mel", type: "textarea", required: true }
           ]
         }
@@ -393,10 +391,8 @@ const CONTENT = {
             { name: "business", label: "Shop or company name (optional)", type: "text", half: true, autocomplete: "organization" },
             { name: "project", label: "What do you need?", type: "select", required: true,
               options: ["A new website", "Upgrade my existing website", "A new app for staff or customers", "Upgrade my existing app", "An internal system or dashboard", "Not sure yet"] },
-            { name: "timeline", label: "When do you need it?", type: "select", half: true,
+            { name: "timeline", label: "When do you need it?", type: "select",
               options: ["As soon as possible", "Within 1–3 months", "Later on", "No rush"] },
-            { name: "budget", label: "Budget (optional)", type: "select", half: true,
-              options: ["Under $500", "$500–$1,500", "$1,500–$5,000", "Over $5,000", "Not sure yet"] },
             { name: "message", label: "Tell us about your business and what you need", type: "textarea", required: true }
           ]
         }
