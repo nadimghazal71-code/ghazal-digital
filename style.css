@@ -434,9 +434,6 @@ section[id] { scroll-margin-top: 80px; }
 .footer-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .footer-links a { border-bottom: 1px solid rgba(255,255,255,0.2); }
 .footer-links a:hover { color: var(--text); border-color: var(--accent); }
-.footer-region { margin-top: 6px; font-size: 0.8rem; }
-.footer-region a { border-bottom: 1px solid rgba(255,255,255,0.2); }
-.footer-region a:hover { color: var(--text); border-color: var(--accent); }
 /* Column count follows the number of examples, so none is left alone on a row */
 .work-grid[data-count="1"] { grid-template-columns: minmax(0, 640px); }
 .work-grid[data-count="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }

@@ -1,8 +1,7 @@
 /*
-  Shared by both homepages. Reads CONTENT / BRAND / PAGE from the page's own
-  content.js (Swiss: ./content.js, Lebanese: lb/content.js) and renders the
-  active language into the empty placeholders in the HTML. renderAll() runs on
-  load and again whenever the language is switched.
+  Reads CONTENT / BRAND / PAGE from content.js and renders the active language
+  (Arabizi or English) into the empty placeholders in index.html. renderAll()
+  runs on load and again whenever the language is switched.
 
   Also wires up the mobile nav, the two enquiry forms (tabbed, with #fix and
   #build links that open the right one), and the scroll-reveal animation.
@@ -10,8 +9,8 @@
 
 const LANG_KEY = "lang";
 
-// ?lang=de links straight to German; otherwise a visitor's last choice, else
-// the page's first language. A page with one language (Lebanese) ignores both.
+// ?lang=en links straight to English; otherwise a visitor's last choice, else
+// the first language in content.js (Arabizi).
 function initialLang() {
   const fromUrl = new URLSearchParams(location.search).get("lang");
   if (CONTENT[fromUrl]) return fromUrl;
@@ -34,13 +33,12 @@ function setLang(next) {
   renderAll();
 }
 
-// The call button opens the booking calendar if one is configured, otherwise
-// the page's own link (a WhatsApp chat with a message already typed).
+// The call button opens a WhatsApp chat with a message already typed
 function setCallButton(el) {
   const call = t().call;
   el.textContent = call.label;
   el.classList.toggle("btn-whatsapp", call.style === "whatsapp");
-  el.href = BRAND.bookingUrl || call.href;
+  el.href = call.href;
   el.target = "_blank";
   el.rel = "noopener";
 }
@@ -50,12 +48,11 @@ function renderMeta() {
   document.title = m.title;
   document.querySelector('meta[name="description"]').content = m.description;
 
+  // "lb" is our own key for Arabizi; htmlLang is the real language tag (ar-Latn)
+  document.documentElement.lang = t().htmlLang;
   const btn = $("langToggle");
-  if (!btn) return;
-  if (Object.keys(CONTENT).length < 2) { btn.hidden = true; return; }
-  document.documentElement.lang = lang;
   btn.innerHTML = Object.keys(CONTENT)
-    .map(code => `<span class="lang-option${code === lang ? " is-active" : ""}">${code.toUpperCase()}</span>`)
+    .map(code => `<span class="lang-option${code === lang ? " is-active" : ""}">${CONTENT[code].langLabel}</span>`)
     .join("");
   btn.setAttribute("aria-label", t().langSwitch.aria);
 }
@@ -243,10 +240,6 @@ function renderFooter() {
   const f = t().footer;
   $("footerCopy").textContent = f.copy.replace("{year}", new Date().getFullYear());
   $("footerLegal").textContent = f.legal;
-  $("footerLegal").href = f.legalHref;
-  $("footerRegion").textContent = f.region;
-  $("footerRegionLink").textContent = f.regionOther;
-  $("footerRegionLink").href = f.regionHref;
 }
 
 function renderAll() {
@@ -263,12 +256,10 @@ function renderAll() {
 }
 
 $("navToggle").addEventListener("click", () => $("navLinks").classList.toggle("open"));
-if ($("langToggle")) {
-  $("langToggle").addEventListener("click", () => {
-    const codes = Object.keys(CONTENT);
-    setLang(codes[(codes.indexOf(lang) + 1) % codes.length]);
-  });
-}
+$("langToggle").addEventListener("click", () => {
+  const codes = Object.keys(CONTENT);
+  setLang(codes[(codes.indexOf(lang) + 1) % codes.length]);
+});
 
 renderAll();
 

@@ -1,162 +1,19 @@
 <!DOCTYPE html>
-<!-- Lebanese Arabic written in Latin letters (Arabizi): BCP 47 "ar-Latn" -->
-<html lang="ar-Latn">
+<!--
+  This used to be a separate Lebanese homepage; that's now the main page.
+  This stub forwards old /lb/ links there, keeping any #fix / #build so the
+  right form still opens. The meta refresh is the no-JavaScript fallback.
+-->
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ghazal — Digital Solutions | Apps, websites w systems la shoghlak</title>
-<meta name="description" content="Bala wara2, bala Excel, w bala wja3 ras. Apps, websites w systems 3a2ad shoghlak — w iza 3andak shi 3atlan aw 3am yekol wa2tak, mnsalle7o w mnkhallih yemshi la7alo.">
-<link rel="canonical" href="https://digital.ghazalcode.ch/lb/">
-<meta name="theme-color" content="#0f1020">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Ghazal — Digital Solutions">
-<meta property="og:url" content="https://digital.ghazalcode.ch/lb/">
-<meta property="og:title" content="Ghazal — Digital Solutions">
-<meta property="og:description" content="Bala wara2, bala Excel, w bala wja3 ras. Apps, websites w systems 3a2ad shoghlak.">
-<meta property="og:image" content="https://digital.ghazalcode.ch/assets/og-image-lb.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ghazal — Digital Solutions">
-<meta name="twitter:card" content="summary_large_image">
-
-<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="../assets/favicon-32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-
-<meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  base-uri 'none';
-  object-src 'none';
-  script-src 'self';
-  style-src 'self';
-  font-src 'self';
-  img-src 'self' data:;
-  connect-src 'self' https://formsubmit.co;
-  form-action 'self' https://formsubmit.co;
-  upgrade-insecure-requests;
-">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Ghazal — Digital Solutions",
-  "url": "https://digital.ghazalcode.ch/lb/",
-  "description": "Apps, websites and systems for shops and small businesses, plus fixing, upgrading and automating existing tools.",
-  "areaServed": "LB",
-  "knowsLanguage": ["ar", "en"]
-}
-</script>
-
-<link rel="stylesheet" href="../assets/fonts/poppins.css">
-<link rel="stylesheet" href="../style.css?v=20261111e">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://digital.ghazalcode.ch/">
+<meta http-equiv="refresh" content="0; url=../">
+<title>Ghazal — Digital Solutions</title>
+<script>location.replace("../" + location.hash);</script>
 </head>
 <body>
-
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-<div class="blob blob-3"></div>
-
-<header class="navbar">
-  <div class="nav-inner">
-    <a href="#top" class="logo">Ghazal<span>.</span> <small>Digital Solutions</small></a>
-    <nav class="nav-links" id="navLinks"></nav>
-    <div class="nav-actions">
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <section id="top" class="hero">
-    <div class="hero-content">
-      <p class="eyebrow" id="heroEyebrow"></p>
-      <h1 id="heroTitle"></h1>
-      <p class="hero-text" id="heroText"></p>
-      <div class="hero-actions">
-        <a href="#fix" class="btn btn-primary" id="heroFixBtn"></a>
-        <a href="#build" class="btn btn-outline" id="heroBuildBtn"></a>
-      </div>
-      <p class="hero-call"><span id="heroCallPrefix"></span> <a class="btn btn-link" id="heroCallBtn" href="#contact"></a></p>
-      <ul class="hero-facts" id="heroFacts"></ul>
-    </div>
-  </section>
-
-  <section id="services" class="section">
-    <div class="section-head">
-      <span class="tag" id="servicesTag"></span>
-      <h2 id="servicesHeading"></h2>
-    </div>
-    <div class="paths-grid" id="servicesGrid"></div>
-  </section>
-
-  <section id="work" class="section">
-    <div class="section-head">
-      <span class="tag" id="workTag"></span>
-      <h2 id="workHeading"></h2>
-      <p class="section-intro" id="workIntro"></p>
-    </div>
-    <div class="work-grid" id="workGrid"></div>
-  </section>
-
-  <section id="process" class="section">
-    <div class="section-head">
-      <span class="tag" id="processTag"></span>
-      <h2 id="processHeading"></h2>
-    </div>
-    <ol class="steps" id="processSteps"></ol>
-  </section>
-
-  <section id="why" class="section">
-    <div class="section-head">
-      <span class="tag" id="whyTag"></span>
-      <h2 id="whyHeading"></h2>
-    </div>
-    <div class="why-grid" id="whyGrid"></div>
-  </section>
-
-  <section id="about" class="section">
-    <div class="about-wrap">
-      <div class="about-body">
-        <span class="tag" id="aboutTag"></span>
-        <h2 id="aboutHeading"></h2>
-        <p class="about-text" id="aboutText"></p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section contact-section">
-    <div class="section-head">
-      <span class="tag" id="contactTag"></span>
-      <h2 id="contactHeading"></h2>
-      <p class="section-intro" id="contactText"></p>
-    </div>
-    <div class="contact-wrap">
-      <div class="contact-forms">
-        <div class="form-tabs" id="formTabs" role="tablist"></div>
-        <div id="formsWrap"></div>
-      </div>
-      <aside class="contact-info">
-        <a class="btn btn-primary call-btn" id="contactCallBtn" href="#contact"></a>
-        <ul class="contact-details" id="contactDetails"></ul>
-      </aside>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <p id="footerCopy"></p>
-  <p class="footer-links">
-    <a href="../legal.html" id="footerLegal"></a>
-  </p>
-  <p class="footer-region"><span id="footerRegion"></span> <a id="footerRegionLink" href="../?region=ch"></a></p>
-</footer>
-
-<script src="content.js?v=20261111e"></script>
-<script src="../script.js?v=20261111e"></script>
+<p><a href="../">digital.ghazalcode.ch</a></p>
 </body>
 </html>
