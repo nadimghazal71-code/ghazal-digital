@@ -19,7 +19,7 @@
 */
 const BRAND = {
   name: "Ghazal — Digital Solutions",
-  whatsapp: "https://wa.me/41767948518",
+  whatsapp: "https://wa.me/96170872960",
   formEndpoint: "https://formsubmit.co/ajax/nadimghazal71@gmail.com"
 };
 
