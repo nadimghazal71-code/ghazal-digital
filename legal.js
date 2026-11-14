@@ -9,15 +9,14 @@
   responsible and give a way to contact them. The homepage itself stays
   in company voice with no personal details.
 
-  TODO before relying on this page: add the business's postal address and, once
-  registered, its UID number to `identity` below. Switch LEGAL_CONTACT.email to
-  a business address (e.g. hello@ghazalcode.ch) once you have one. Delete this
-  note when done.
+  TODO before relying on this page: add the business's postal address (a P.O.
+  box or business address works if you'd rather not show your home) and, once
+  registered, its UID number to `identity` below. Delete this note when done.
 */
 
 const LEGAL_CONTACT = {
   owner: "Nadim Ghazal",
-  email: "nadimghazal71@gmail.com"
+  email: "info@ghazalcode.ch"
 };
 
 const mail = `<a href="mailto:${LEGAL_CONTACT.email}">${LEGAL_CONTACT.email}</a>`;

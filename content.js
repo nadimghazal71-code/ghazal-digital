@@ -12,15 +12,15 @@
 
   Things you'll most likely want to change:
     - BRAND.whatsapp     the number every WhatsApp button opens
-    - BRAND.formEndpoint once FormSubmit has sent you an activation email, swap
-                         the address here for the random alias it gives you,
-                         so your Gmail address isn't in the page source
+    - BRAND.formEndpoint where the forms deliver (info@ghazalcode.ch, which
+                         forwards to the company Gmail). FormSubmit asks this
+                         address to confirm once before anything arrives.
     - contact.forms      the two enquiry forms: fields and choices
 */
 const BRAND = {
   name: "Ghazal — Digital Solutions",
   whatsapp: "https://wa.me/96170872960",
-  formEndpoint: "https://formsubmit.co/ajax/nadimghazal71@gmail.com"
+  formEndpoint: "https://formsubmit.co/ajax/info@ghazalcode.ch"
 };
 
 // Sent with every enquiry
