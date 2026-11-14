@@ -90,8 +90,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   justify-content: space-between;
   gap: 16px;
 }
-.logo { font-weight: 700; font-size: 1.3rem; letter-spacing: 0.5px; white-space: nowrap; }
-.logo span { color: var(--primary); }
+/* Gazelle mark + name. The mark is 3:5, so its height sets the logo's size. */
+.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.3rem; letter-spacing: 0.5px; white-space: nowrap; }
+.logo-mark { height: 35px; width: auto; display: block; }
 .logo small {
   font-size: 0.72rem;
   font-weight: 500;
