@@ -60,7 +60,7 @@
 <link rel="stylesheet" href="assets/fonts/poppins.css">
 <!-- The ?v= token is a cache buster: GitHub Pages serves files with a 10-minute
      cache, so bump it on every page whenever a shared file changes. -->
-<link rel="stylesheet" href="style.css?v=20261114i">
+<link rel="stylesheet" href="style.css?v=20261114k">
 </head>
 <body>
 
@@ -83,14 +83,14 @@
 
   <section id="top" class="hero">
     <div class="hero-content">
-      <p class="eyebrow" id="heroEyebrow"></p>
       <h1 id="heroTitle"></h1>
       <p class="hero-text" id="heroText"></p>
       <div class="hero-actions">
-        <button type="button" class="btn btn-primary btn-guide" id="heroWizardBtn" data-wizard></button>
+        <button type="button" class="btn btn-primary" id="heroWizardBtn" data-wizard></button>
+        <span class="hero-or" id="heroCallPrefix"></span>
+        <a class="btn" id="heroCallBtn" href="#contact"></a>
       </div>
       <p class="hero-hint" id="heroWizardHint"></p>
-      <p class="hero-call"><span id="heroCallPrefix"></span> <a class="btn btn-link" id="heroCallBtn" href="#contact"></a></p>
       <ul class="hero-facts" id="heroFacts"></ul>
     </div>
   </section>
@@ -146,8 +146,9 @@
         <div id="formsWrap"></div>
       </div>
       <aside class="contact-info">
-        <a class="btn btn-primary call-btn" id="contactCallBtn" href="#contact"></a>
-        <ul class="contact-details" id="contactDetails"></ul>
+        <p class="contact-quick-title" id="contactQuickTitle"></p>
+        <p class="contact-quick-text" id="contactQuickText"></p>
+        <a class="btn call-btn" id="contactCallBtn" href="#contact"></a>
       </aside>
     </div>
   </section>
@@ -166,8 +167,8 @@
   </p>
 </footer>
 
-<script src="content.js?v=20261114i"></script>
-<script src="script.js?v=20261114i"></script>
-<script src="wizard.js?v=20261114i"></script>
+<script src="content.js?v=20261114k"></script>
+<script src="script.js?v=20261114k"></script>
+<script src="wizard.js?v=20261114k"></script>
 </body>
 </html>

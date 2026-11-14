@@ -66,7 +66,6 @@ function renderNav() {
 
 function renderHero() {
   const h = t().hero;
-  $("heroEyebrow").textContent = h.eyebrow;
   $("heroTitle").textContent = h.title;
   $("heroText").textContent = h.text;
   $("heroWizardBtn").textContent = t().wizard.open;
@@ -176,13 +175,9 @@ function renderContact() {
   $("contactText").textContent = c.text;
   $("guideBannerText").textContent = t().wizard.banner;
   $("guideBannerBtn").textContent = t().wizard.open;
+  $("contactQuickTitle").textContent = c.quick.title;
+  $("contactQuickText").textContent = c.quick.text;
   setCallButton($("contactCallBtn"));
-  $("contactDetails").innerHTML = c.details.map(d => `
-    <li>
-      <span class="detail-label">${d.label}</span>
-      ${d.href ? `<a href="${d.href}"${d.href.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${d.value}</a>` : `<span>${d.value}</span>`}
-    </li>
-  `).join("");
 
   const saved = snapshotForms();
   const tabs = $("formTabs");

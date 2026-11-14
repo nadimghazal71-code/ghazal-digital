@@ -41,7 +41,6 @@ const CONTENT = {
     call: { label: "7kina 3al WhatsApp", href: wa("Marhaba, shefet el website w badde es2al 3an shi la sheghle."), style: "whatsapp" },
 
     hero: {
-      eyebrow: "Ghazal — Digital Solutions",
       title: "Bala wra2, bala Excel, w bala waja3 ras.",
       text: "Mna3mellak apps, websites w systems 3a2ad sheghlak — w iza 3endak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!.",
       callPrefix: "aw",
@@ -150,9 +149,7 @@ const CONTENT = {
       tag: "7kina",
       heading: "Khabberna shu baddak",
       text: "fekra 3al sari3 bteke. Ekhtar el form li byenesbak w ektebelna kam satr — aw b3atelna direct 3al WhatsApp.",
-      details: [
-        { label: "WhatsApp", value: "B3atelna resele", href: wa("Marhaba, shefet el website w badde es2al 3an shi la shoghle.") }
-      ],
+      quick: { title: "Ahsan 3al WhatsApp?", text: "B3atelna resele w mnrodd 3lek b2a2rab wa2et." },
       tabsLabel: "Ekhtar el form",
       sending: "3am yetb3at…",
       success: "Wosolet! Mnrodd 3lek b2a2rab wa2et.",
@@ -213,7 +210,6 @@ const CONTENT = {
     call: { label: "Chat with us on WhatsApp", href: wa("Hi, I saw your website and I'd like to ask about something for my business."), style: "whatsapp" },
 
     hero: {
-      eyebrow: "Ghazal — Digital Solutions",
       title: "No paper. No Excel. No headache.",
       text: "We build apps, websites and systems around the way you work: your staff log everything on their phones, and you see it all in real time. And if something's broken or eating your time, we fix it and make it run itself.",
       callPrefix: "or",
@@ -319,9 +315,7 @@ const CONTENT = {
       tag: "Contact",
       heading: "Tell us what you need",
       text: "A rough idea is enough. Pick the form that fits and write us a few lines — or message us straight on WhatsApp.",
-      details: [
-        { label: "WhatsApp", value: "Send us a message", href: wa("Hi, I saw your website and I'd like to ask about something for my business.") }
-      ],
+      quick: { title: "Prefer to chat?", text: "Message us on WhatsApp and we will get back to you shortly." },
       tabsLabel: "Choose a form",
       sending: "Sending…",
       success: "Got it! We'll get back to you shortly.",
