@@ -34,24 +34,24 @@ const CONTENT = {
     htmlLang: "ar-Latn",
     meta: {
       title: "Ghazal — Digital Solutions | Apps, websites w systems la shoghlak",
-      description: "Bala wra2, bala Excel, w bala waja3 ras. Mna3mellak apps, websites w systems 3a2ad shoghlak — w iza 3andak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!."
+      description: "Bala wra2, bala Excel, w bala waja3 ras. Mna3mellak apps, websites w systems 3a2ad sheghlak — w iza 3endak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!."
     },
-    nav: [["#services", "Shu mna3mel"], ["#work", "sheghelna"], ["#process", "Kif mnshteghel"], ["#contact", "7kina"]],
+    nav: [["#services", "Shu mna3mel"], ["#process", "Kif mnshteghel"], ["#contact", "7kina"]],
     langSwitch: { aria: "Show the English version" },
     call: { label: "7kina 3al WhatsApp", href: wa("Marhaba, shefet el website w badde es2al 3an shi la sheghle."), style: "whatsapp" },
 
     hero: {
       eyebrow: "Ghazal — Digital Solutions",
       title: "Bala wra2, bala Excel, w bala waja3 ras.",
-      text: "Mna3mellak app, website aw system 3a2ad shoghlak: el staff bisajjlo kel shi 3al telephone, w enta btshouf kel shi 3a wa2to. W iza 3andak shi 3atlan aw 3am yekol wa2tak, mnsalle7o w mnkhallih yemshi la7alo.",
+      text: "Mna3mellak apps, websites w systems 3a2ad sheghlak — w iza 3endak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!.",
       callPrefix: "aw",
-      facts: ["Byeshteghel 7atta bala internet", "3arabe · English", "Ass3ar wad7a men el bidaye"]
+      facts: ["Byeshteghel 7atta bala internet", "3arabe · English", "As3ar wad7a men el bidaye"]
     },
 
     // The guided picker ("Sa3edne ekhtar"): 4 short steps instead of a form.
     // Each category's `details` are the options shown in step 2.
     wizard: {
-      open: "Sa3edne ekhtar",
+      open: "Se3edne ekhtar",
       openHint: "Mish akid shu baddak? Jaweb 3a 3 as2ile w khalas.",
       banner: "Mish akid ayya form? Khalline sa3dak tekhtar.",
       close: "Sakker",
@@ -66,7 +66,7 @@ const CONTENT = {
         { id: "website", icon: "🌐", title: "Website", text: "Tkoun mawjoud online w tjib zbeyen",
           details: ["Safha bta3rruf 3an shoghle", "Online shop / talabiyet", "7ajez w mawa3id", "Menu aw catalogue lal products"] },
         { id: "app", icon: "📱", title: "App", text: "Lal staff aw lal zbeyen",
-          details: ["Lal staff ysajjlo stock, talabiyet aw tasleem", "Lal zbeyen yotlobo aw ye7jzo", "Points w offers lal zbeyen", "Byeshteghel bala internet"] },
+          details: ["Lal staff ysajjlo stock, talabiyet aw tesleem", "Lal zbeyen yotlobo aw ye7jzo", "Points w offers lal zbeyen", "Byeshteghel bala internet"] },
         { id: "both", icon: "🔗", title: "Website + App", text: "Kel shi byeshteghel ma3 ba3do",
           details: ["El zbun byotlob online w el staff bit2abba3 bel app", "7ajez online, w el idara men el telephone", "Catalogue 3al website w talabiyet bel app", "Ma ba3ref ba3d — sa3edne khattet"] },
         { id: "system", icon: "⚙️", title: "System lal shoghl", text: "Stock, talabiyet w staff b mahall wa7ad",
@@ -119,31 +119,13 @@ const CONTENT = {
       ]
     },
 
-    work: {
-      tag: "Shoghlna",
-      heading: "Systems 7a2i2iye, 3am tishteghel",
-      intro: "Hawde systems 3melnehon la ma7allat kenet tishteghel 3al wara2 w el Excel.",
-      items: [
-        {
-          title: "Wasl tasleem w 7sebet el shahr la laundry",
-          text: "Laundry bikhdom 2arib el 30 mat3am w otel, ken 3endo Excel la kel zbun kel shahr, w el tasleemet maktoube 3al telephone. Hala2 el staff bisajjel kel tasleeme 3al telephone: el app btitba3 wasl el tasleem dagre, w bt3abbe el Excel el shahri la kel zbun la7ala — metl el files el 2adime bel zabt, w jehze lal mo7aseb.",
-          tags: ["Android w iPhone", "Bala internet", "Excel", "Wasl tasleem"]
-        },
-        {
-          title: "Tasjil test drive la ma7al sayyarat",
-          text: "El staff bisajjel kel test drive 3al telephone: soura lal ruksa, el ma3loumet, imda bel isba3, w 3a2d jehez lal tab3a. Ma ba2a fi wara2, w byeshteghel 7atta bala internet.",
-          tags: ["Android", "Web", "Bala internet", "PDF"]
-        }
-      ]
-    },
-
     process: {
       tag: "Kif mnshteghel",
-      heading: "Men awwal 7ake la system shaghghal",
+      heading: "Men awwal meeting la system shaghghal",
       steps: [
-        { n: "1", title: "7ake majjeniye", text: "Nos se3a 3al WhatsApp aw video call. Btfarjina kif 3am teshteghel hala2, w mn2ellak b sara7a iza el software huwwe el 7al aw la2." },
-        { n: "2", title: "3ard wade7", text: "Mna3tik kel shi maktoub: shu ra7 nsawwi, ade byekhod wa2et w ade bikallef — abel ma nballesh. Bala mfeje2at." },
-        { n: "3", title: "Shoghl 3a mara7el", text: "Btshouf nuskha shaghghale men bakkir, la nsalle7 el ghalat w huwwe ba3do rkhis. Ba3den mn3allem el staff w mnb2a 7addak ba3d ma nballesh." }
+        { n: "1", title: "meeting majjene", text: "Nos se3a 3al WhatsApp aw video call. Btfarjina kif 3am teshteghel hala2, w mn2ellak b sara7a iza el software huwwe el 7al aw la2." },
+        { n: "2", title: "3ard wade7", text: "Mna3tik kel shi maktoub: shu ra7 na3mel, ade byekhod wa2et w ade bikallef — abel ma nballesh. Bala mfeja2at." },
+        { n: "3", title: "sheghel 3a mara7el", text: "Btshouf nuskha shaghalle 3a bakkir, la nsalle7 el ghalat w huwwe ba3do rkhis. Ba3den mn3allem el staff w mnb2a 7addak ba3d ma nballesh." }
       ]
     },
 
@@ -226,7 +208,7 @@ const CONTENT = {
       title: "Ghazal — Digital Solutions | Apps, websites & systems for your business",
       description: "No paper, no Excel, no headache. Apps, websites and systems built around how your business works — and if something's broken or eating your time, we fix it and automate it."
     },
-    nav: [["#services", "What we do"], ["#work", "Our work"], ["#process", "How it works"], ["#contact", "Contact"]],
+    nav: [["#services", "What we do"], ["#process", "How it works"], ["#contact", "Contact"]],
     langSwitch: { aria: "Shoufa bel 3arabe" },
     call: { label: "Chat with us on WhatsApp", href: wa("Hi, I saw your website and I'd like to ask about something for my business."), style: "whatsapp" },
 
@@ -302,24 +284,6 @@ const CONTENT = {
             "A dashboard to see your sales and stock in real time"
           ],
           cta: "Let's get started →"
-        }
-      ]
-    },
-
-    work: {
-      tag: "Our work",
-      heading: "Real systems, already in use",
-      intro: "Systems we built for businesses that used to run on paper and Excel.",
-      items: [
-        {
-          title: "Delivery slips & monthly billing for a commercial laundry",
-          text: "A laundry serving around 30 restaurants and hotels kept an Excel file per client per month, with deliveries noted on a phone. Now staff log each delivery on a phone: the app prints the delivery slip on the spot and fills in every client's monthly Excel automatically — identical to the old files, ready for the accountant.",
-          tags: ["Android & iPhone", "Works offline", "Excel export", "Delivery slips"]
-        },
-        {
-          title: "Test-drive registration for a car dealership",
-          text: "Staff register each test drive on a phone: driver's licence photo, details, a finger-drawn signature, and a ready-to-print agreement. It replaced paper forms and works even without internet.",
-          tags: ["Android", "Web", "Works offline", "Print / PDF"]
         }
       ]
     },

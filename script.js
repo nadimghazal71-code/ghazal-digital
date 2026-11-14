@@ -91,22 +91,6 @@ function renderServices() {
   `).join("");
 }
 
-function renderWork() {
-  const c = t().work;
-  $("workTag").textContent = c.tag;
-  $("workHeading").textContent = c.heading;
-  $("workIntro").textContent = c.intro;
-  $("workGrid").innerHTML = c.items.map(w => `
-    <div class="work-card">
-      <h3>${w.title}</h3>
-      <p>${w.text}</p>
-      <ul class="chips">${w.tags.map(tag => `<li>${tag}</li>`).join("")}</ul>
-      ${w.demo ? `<a href="${w.demo}" class="work-link" target="_blank" rel="noopener">${c.demoLabel}</a>` : ""}
-    </div>
-  `).join("");
-  // The grid's column count follows the number of examples (see style.css)
-  $("workGrid").dataset.count = c.items.length;
-}
 
 function renderProcess() {
   const c = t().process;
@@ -249,7 +233,6 @@ function renderAll() {
   renderNav();
   renderHero();
   renderServices();
-  renderWork();
   renderProcess();
   renderWhy();
   renderAbout();

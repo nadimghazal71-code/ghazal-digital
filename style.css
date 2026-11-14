@@ -264,30 +264,6 @@ section[id] { scroll-margin-top: 80px; }
 .path-points li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-2); font-weight: 700; }
 .path-cta { margin-top: auto; align-self: flex-start; }
 
-/* Work */
-.work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--grid-gap); }
-.work-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 28px;
-  border: 1px solid rgba(255,255,255,0.06);
-  display: flex;
-  flex-direction: column;
-}
-.work-card h3 { margin: 0 0 10px; font-size: 1.2rem; }
-.work-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; margin: 0 0 16px; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
-.chips li {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-dim);
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 999px;
-  padding: 4px 11px;
-}
-.work-link { margin-top: auto; color: var(--accent-2); font-weight: 600; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 4px; }
-.work-link:hover { color: var(--accent); }
 
 /* Process */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); }
@@ -546,9 +522,6 @@ body:has(.wizard[open]) { overflow: hidden; }
 .footer-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .footer-links a { border-bottom: 1px solid rgba(255,255,255,0.2); }
 .footer-links a:hover { color: var(--text); border-color: var(--accent); }
-/* Column count follows the number of examples, so none is left alone on a row */
-.work-grid[data-count="1"] { grid-template-columns: minmax(0, 640px); }
-.work-grid[data-count="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 /* Legal page */
 .legal { max-width: 780px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) var(--section-x); position: relative; z-index: 1; }
@@ -569,8 +542,6 @@ body:has(.wizard[open]) { overflow: hidden; }
      content, and a <select> is as wide as its longest option — which pushed
      the forms past the edge of a phone screen. */
   .contact-wrap { grid-template-columns: minmax(0, 1fr); }
-  /* Three examples don't split evenly into two columns, so they stack */
-  .work-grid[data-count="3"] { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -593,7 +564,7 @@ body:has(.wizard[open]) { overflow: hidden; }
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .logo small { display: none; }
-  .paths-grid, .work-grid, .work-grid[data-count], .why-grid, .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .paths-grid, .why-grid, .form-grid { grid-template-columns: minmax(0, 1fr); }
   .form-tabs { flex-direction: column; }
   /* On a phone the picker becomes a full-screen sheet */
   .wizard { width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
