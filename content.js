@@ -120,7 +120,7 @@ const CONTENT = {
 
     process: {
       tag: "Kif mnshteghel",
-      heading: "Men awwal meeting la system shaghghal",
+      heading: "Men awwal meeting la system shaghal",
       steps: [
         { n: "1", title: "meeting majjene", text: "Nos se3a 3al WhatsApp aw video call. Btfarjina kif 3am teshteghel hala2, w mn2ellak b sara7a iza el software huwwe el 7al aw la2." },
         { n: "2", title: "3ard wade7", text: "Mna3tik kel shi maktoub: shu ra7 na3mel, ade byekhod wa2et w ade bikallef — abel ma nballesh. Bala mfeja2at." },
