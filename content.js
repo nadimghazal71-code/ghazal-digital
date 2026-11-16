@@ -19,7 +19,7 @@
 */
 const BRAND = {
   name: "Ghazal — Digital Solutions",
-  whatsapp: "https://wa.me/96170872960",
+  whatsapp: "https://wa.me/9613998193",
   formEndpoint: "https://formsubmit.co/ajax/info@ghazalcode.ch"
 };
 
@@ -33,7 +33,7 @@ const CONTENT = {
     langLabel: "3arabe",
     htmlLang: "ar-Latn",
     meta: {
-      title: "Ghazal — Digital Solutions | Apps, websites w systems la shoghlak",
+      title: "Ghazal — Digital Solutions | Apps, websites w systems la sheghlak",
       description: "Bala wra2, bala Excel, w bala waja3 ras. Mna3mellak apps, websites w systems 3a2ad sheghlak — w iza 3endak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!."
     },
     nav: [["#services", "Shu mna3mel"], ["#process", "Kif mnshteghel"], ["#contact", "7kina"]],
@@ -63,17 +63,17 @@ const CONTENT = {
       contact: { q: "Ra7 nkhallis — wen fina n7kik?", summary: "Talabak", name: "Esmak", phone: "Ra2m el WhatsApp", note: "Fi shi tene? (optional)", send: "B3at", whatsapp: "Aw b3at 3al WhatsApp" },
       categories: [
         { id: "website", icon: "🌐", title: "Website", text: "Tkoun mawjoud online w tjib zbeyen",
-          details: ["Safha bta3rruf 3an shoghle", "Online shop / talabiyet", "7ajez w mawa3id", "Menu aw catalogue lal products"] },
+          details: ["Safha bta3rruf 3an sheghle", "Online shop / talabiyet", "7ajez w mawa3id", "Menu aw catalogue lal products"] },
         { id: "app", icon: "📱", title: "App", text: "Lal staff aw lal zbeyen",
           details: ["Lal staff ysajjlo stock, talabiyet aw tesleem", "Lal zbeyen yotlobo aw ye7jzo", "Points w offers lal zbeyen", "Byeshteghel bala internet"] },
         { id: "both", icon: "🔗", title: "Website + App", text: "Kel shi byeshteghel ma3 ba3do",
           details: ["El zbun byotlob online w el staff bit2abba3 bel app", "7ajez online, w el idara men el telephone", "Catalogue 3al website w talabiyet bel app", "Ma ba3ref ba3d — sa3edne khattet"] },
-        { id: "system", icon: "⚙️", title: "System lal shoghl", text: "Stock, talabiyet w staff b mahall wa7ad",
-          details: ["Stock w inventory", "Talabiyet w tasleem", "Zbeyen w follow-up", "Staff, shifts w mahamm", "Dashboard w ta2arir"] },
+        { id: "system", icon: "⚙️", title: "System lal sheghl", text: "Stock, talabiyet w staff b mahall wa7ad",
+          details: ["Stock w inventory", "Talabiyet w tesleem", "Zbeyen w follow-up", "Staff, shifts w mahamm", "Dashboard w ta2arir"] },
         { id: "billing", icon: "🧾", title: "Fawater w 7sebet", text: "Fawater, wusulat w meen 3leh masari",
           details: ["Fawater w wusulat jehze lal tab3a", "Shouf meen 3leh masari", "Kashf 7sab shahri la kel zbun", "Export lal mo7aseb"] },
-        { id: "fix", icon: "🛠️", title: "Tasli7 aw ta7sin", text: "Shi 3andak mish 3am yemshi mni7",
-          details: ["El website bati2 aw 3atlan", "El app fiya mashekel", "El Excel tafaj", "Automation la shoghl byetkarrar kel yom", "Wassel programs ma 3am ye7ko ba3don"] }
+        { id: "fix", icon: "🛠️", title: "Tasli7 aw ta7sin", text: "Shi 3endak mish 3am yemshi mni7",
+          details: ["El website bati2 aw 3atlan", "El app fiya mashekel", "El Excel tafaj", "Automation la sheghl byetkarrar kel yom", "Wassel programs ma 3am ye7ko ba3don"] }
       ],
       timeline: ["Bi2a2rab wa2et", "Khilel 1–3 ishhor", "Ma fi 3ajle"],
       subject: "Guided request — Ghazal Digital",
@@ -81,7 +81,7 @@ const CONTENT = {
       sending: "3am yetb3at…",
       done: { title: "Wosolet! 🎉", text: "Mnb3atlak 3al WhatsApp b2a2rab wa2et.", close: "Tamem" },
       error: "Fi shi ma zabat. Jarreb kamen marra, aw b3at 3al WhatsApp.",
-      wa: { intro: "Marhaba! 3abbet el guide 3al website.", category: "Baddi", details: "Lazem ya3mel", timeline: "Emta", name: "Esme", note: "Mula7aza" }
+      wa: { intro: "Marhaba! 3abbet el guide 3al website.", category: "Baddi", details: "Lezem ya3mel", timeline: "Emta", name: "Esme", note: "Mula7aza" }
     },
 
     services: {
@@ -92,14 +92,14 @@ const CONTENT = {
           id: "fix",
           icon: "🛠️",
           title: "Mnsalle7, mntawwer w mna3mel automation",
-          lead: "3andak system, website aw Excel, bas mish 3am yemshi metl ma lezem?",
+          lead: "3endak system, website aw Excel, bas mish 3am yemshi metl ma lezem?",
           points: [
             "Website bati2 aw 3atlan? Mnsalle7o.",
             "System 2adim? Mnjaddo w mnzidlo li na2so.",
-            "Shoghl byetkarrar kel yom — fawater, ta2arir, data entry? Mnkhalli yemshi la7alo.",
+            "Sheghl byetkarrar kel yom — fawater, ta2arir, data entry? Mnkhalli yemshi la7alo.",
             "Programs ma 3am ye7ko ba3don? Mnwasselon ma3 ba3d."
           ],
-          cta: "Khabbirna shu el meshkle →"
+          cta: "Khabberna shu el meshkle →"
         },
         {
           id: "build",
@@ -134,7 +134,7 @@ const CONTENT = {
       items: [
         { icon: "⚡", title: "Byeshteghel bala internet", text: "Ra7et el kahraba? 2ata3 el internet? El system bikammel, w bi3mel sync lamma yerja3 el khatt." },
         { icon: "💬", title: "3al WhatsApp", text: "El talabiyet, el fawater w el ta2arir bewsalo 3al WhatsApp — matra7 ma enta w zbeynak 3ayshin aslan." },
-        { icon: "💵", title: "Ass3ar wad7a", text: "Kel shi bel dollar w maktoub men el awwal. Ma fi shi mkhabba." },
+        { icon: "💵", title: "As3ar wad7a", text: "Kel shi bel dollar w maktoub men el awwal. Ma fi shi mkhabba." },
         { icon: "🤝", title: "Nafs el shakhs men el awwal lal ekher", text: "Btehke ma3 nafs el shakhs men awwal 7ake la ekher tasli7 — mish ma3 call center. W mnjewbak." }
       ]
     },
@@ -166,7 +166,7 @@ const CONTENT = {
             { name: "email", label: "Email (optional)", type: "email", half: true, autocomplete: "email" },
             { name: "business", label: "Esm el ma7al aw el sharike (optional)", type: "text", half: true, autocomplete: "organization" },
             { name: "topic", label: "Shu baddo tasli7?", type: "select", required: true, half: true,
-              options: ["Website", "App aw system", "Excel aw daftar", "Programs lazem ye7ko ma3 ba3don", "Shi tene"] },
+              options: ["Website", "App aw system", "Excel aw daftar", "Programs lezem ye7ko ma3 ba3don", "Shi tene"] },
             { name: "urgency", label: "Ade mesta3jel?", type: "select", half: true,
               options: ["3atlan hala2", "Bel jem3at el jeyye", "3am es2al bas"] },
             { name: "message", label: "Shu el meshkle, aw shu 3am yekol wa2tak?", type: "textarea", required: true }
@@ -174,7 +174,7 @@ const CONTENT = {
         },
         build: {
           tab: "App aw website",
-          intro: "Website jdid, app jdid, aw nuskha a7san men li 3andak.",
+          intro: "Website jdid, app jdid, aw nuskha a7san men li 3endak.",
           subject: "Build / upgrade — Ghazal Digital",
           submit: "B3at",
           fields: [
@@ -186,7 +186,7 @@ const CONTENT = {
               options: ["Website jdid", "Tatwir el website li 3ande", "App jdid lal staff aw lal zbeyen", "Tatwir el app li 3ande", "System dakhile aw dashboard", "Ma ba3ref ba3d"] },
             { name: "timeline", label: "Emta baddak yeh?", type: "select",
               options: ["Bi2a2rab wa2et", "Khilel 1–3 ishhor", "Ba3d shway", "Ma fi 3ajle"] },
-            { name: "message", label: "Khabbirna 3an shoghlak w shu baddak ya3mel", type: "textarea", required: true }
+            { name: "message", label: "Khabberna 3an sheghlak w shu baddak ya3mel", type: "textarea", required: true }
           ]
         }
       }
