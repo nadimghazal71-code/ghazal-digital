@@ -291,6 +291,22 @@ section[id] { scroll-margin-top: 80px; }
 .about-body .tag { margin-bottom: 12px; }
 .about-text { color: var(--text-dim); line-height: 1.85; font-size: 1.02rem; margin: 14px 0 0; max-width: 62ch; }
 
+/* Talabiyeh — our own product, in its green so it reads as a separate app */
+.product-wrap {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
+  background: linear-gradient(135deg, rgba(52,179,138,0.16), rgba(37,99,235,0.06)), var(--card);
+  border: 1px solid rgba(52,179,138,0.35);
+  border-radius: var(--radius);
+  padding: clamp(28px, 4vw, 44px);
+}
+.product-body { flex: 1 1 520px; min-width: 0; }
+.product-body .tag { margin-bottom: 12px; }
+.product-points { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.product-points li { color: var(--text); font-size: 0.95rem; }
+.product-points li::before { content: "✓"; color: #34b38a; font-weight: 700; margin-right: 8px; }
+.btn-product { background: #34b38a; color: #08241b; border-color: #34b38a; font-weight: 700; flex: none; }
+.btn-product:hover { background: #3fc597; }
+
 /* Contact — tabbed forms on the left, direct contact on the right */
 .contact-wrap { display: grid; grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr); gap: 36px; align-items: start; }
 /* A small WhatsApp card beside the forms; stays in view while the form scrolls */

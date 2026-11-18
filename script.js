@@ -117,6 +117,17 @@ function renderWhy() {
   `).join("");
 }
 
+function renderProduct() {
+  const c = t().product;
+  $("productTag").textContent = c.tag;
+  $("productHeading").textContent = c.heading;
+  $("productText").textContent = c.text;
+  $("productPoints").innerHTML = c.points.map(p => `<li>${p}</li>`).join("");
+  const btn = $("productBtn");
+  btn.textContent = c.cta;
+  btn.href = BRAND.talabiyeh + (lang === "en" ? "/?lang=en" : "/");
+}
+
 function renderAbout() {
   const c = t().about;
   $("aboutTag").textContent = c.tag;
@@ -228,6 +239,7 @@ function renderAll() {
   renderNav();
   renderHero();
   renderServices();
+  renderProduct();
   renderProcess();
   renderWhy();
   renderAbout();

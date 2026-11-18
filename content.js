@@ -20,7 +20,9 @@
 const BRAND = {
   name: "Ghazal — Digital Solutions",
   whatsapp: "https://wa.me/9613998193",
-  formEndpoint: "https://formsubmit.co/ajax/info@ghazalcode.ch"
+  formEndpoint: "https://formsubmit.co/ajax/info@ghazalcode.ch",
+  // Our own product (separate app). TODO: final address once the domain is bought.
+  talabiyeh: "https://talabiyeh.app"
 };
 
 // Sent with every enquiry
@@ -36,7 +38,7 @@ const CONTENT = {
       title: "Ghazal — Digital Solutions | Apps, websites w systems la sheghlak",
       description: "Bala wra2, bala Excel, w bala waja3 ras. Mna3mellak apps, websites w systems 3a2ad sheghlak — w iza 3endak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!."
     },
-    nav: [["#services", "Shu mna3mel"], ["#process", "Kif mnshteghel"], ["#contact", "7kina"]],
+    nav: [["#services", "Shu mna3mel"], ["#talabiyeh", "Talabiyeh"], ["#process", "Kif mnshteghel"], ["#contact", "7kina"]],
     langSwitch: { aria: "Show the English version" },
     call: { label: "7kina 3al WhatsApp", href: wa("Marhaba, shefet el website w badde es2al 3an shi la sheghle."), style: "whatsapp" },
 
@@ -116,6 +118,15 @@ const CONTENT = {
           cta: "Yalla nballesh →"
         }
       ]
+    },
+
+    // Our own product: a ready-made order app for Instagram / WhatsApp shops
+    product: {
+      tag: "Product men 3enna",
+      heading: "Talabiyeh: kel talabiyetak men Instagram w WhatsApp b mahall wa7ad",
+      text: "Ma baddak system 3a2ad? Ballesh el yom b Talabiyeh: link wa7ad bel bio, el zbun byotlob la7alo, w enta btshouf el talabiyet, el stock, el drivers w masari el cash.",
+      points: ["Link lal talabiyet bel Instagram bio", "El stock byenzal la7alo", "Drivers w cash bel dollar w bel lira", "Messages jehze 3al WhatsApp"],
+      cta: "Shouf Talabiyeh →"
     },
 
     process: {
@@ -205,7 +216,7 @@ const CONTENT = {
       title: "Ghazal — Digital Solutions | Apps, websites & systems for your business",
       description: "No paper, no Excel, no headache. Apps, websites and systems built around how your business works — and if something's broken or eating your time, we fix it and automate it."
     },
-    nav: [["#services", "What we do"], ["#process", "How it works"], ["#contact", "Contact"]],
+    nav: [["#services", "What we do"], ["#talabiyeh", "Talabiyeh"], ["#process", "How it works"], ["#contact", "Contact"]],
     langSwitch: { aria: "Shoufa bel 3arabe" },
     call: { label: "Chat with us on WhatsApp", href: wa("Hi, I saw your website and I'd like to ask about something for my business."), style: "whatsapp" },
 
@@ -282,6 +293,14 @@ const CONTENT = {
           cta: "Let's get started →"
         }
       ]
+    },
+
+    product: {
+      tag: "Our product",
+      heading: "Talabiyeh: all your Instagram and WhatsApp orders in one place",
+      text: "Don't need a custom system? Start today with Talabiyeh: one link in your bio, customers order on their own, and you see orders, stock, drivers and the cash they collect.",
+      points: ["Order link for your Instagram bio", "Stock updates by itself", "Drivers and cash in USD and LBP", "Ready-made WhatsApp messages"],
+      cta: "See Talabiyeh →"
     },
 
     process: {
