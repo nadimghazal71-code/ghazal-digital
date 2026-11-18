@@ -42,7 +42,7 @@
     const lines = [wa.intro, "", ...summaryLines(wa)];
     if (s.name.trim()) lines.push(`${wa.name}: ${s.name.trim()}`);
     if (s.note.trim()) lines.push(`${wa.note}: ${s.note.trim()}`);
-    return BRAND.whatsapp + "?text=" + encodeURIComponent(lines.join("\n"));
+    return BRAND.whatsapp + "?text=" + encodeURIComponent(waTag(lines.join("\n")));
   }
 
   function tile(k) {
@@ -213,6 +213,7 @@
     const data = {
       form: "Guided picker",
       region: PAGE.region,
+      source: PAGE.source || "direct",
       language: lang,
       name: s.name.trim(),
       phone: s.phone.trim(),

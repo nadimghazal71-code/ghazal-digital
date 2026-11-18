@@ -126,7 +126,7 @@ function renderProduct() {
   $("productPoints").innerHTML = c.points.map(p => `<li>${p}</li>`).join("");
   const btn = $("productBtn");
   btn.textContent = c.cta;
-  btn.href = BRAND.talabiyye + (lang === "en" ? "/?lang=en" : "/");
+  btn.href = BRAND.talabiyye + "/?" + (lang === "en" ? "lang=en&" : "") + "src=" + encodeURIComponent(SRC ? "gd-" + SRC : "gd-site").slice(0, 40);
 }
 
 function renderAbout() {
@@ -304,7 +304,7 @@ $("formsWrap").addEventListener("submit", async e => {
   // Bots fill in every field they find; a real visitor never sees this one.
   if (form.querySelector('[name="_honey"]').value) return;
 
-  const data = { form: f.tab, region: PAGE.region, language: lang };
+  const data = { form: f.tab, region: PAGE.region, source: PAGE.source || "direct", language: lang };
   new FormData(form).forEach((value, key) => { if (key !== "_honey") data[key] = value; });
   Object.assign(data, { _subject: f.subject, _template: "table", _captcha: "false" });
 

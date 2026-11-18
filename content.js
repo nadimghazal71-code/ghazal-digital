@@ -25,10 +25,23 @@ const BRAND = {
   talabiyye: "/talabiyye"
 };
 
-// Sent with every enquiry
-const PAGE = { region: "Lebanon" };
+// Ad / link tag (?src=ig-reel-1, or utm_campaign / utm_source), remembered for 30 days.
+// It is sent with every form and added to every WhatsApp message, so we know which ad brought the enquiry.
+const SRC = (() => {
+  try {
+    const q = new URLSearchParams(location.search);
+    const fresh = (q.get("src") || q.get("utm_campaign") || q.get("utm_source") || "").trim().toLowerCase();
+    if (/^[a-z0-9._-]{1,40}$/.test(fresh)) { localStorage.setItem("gd_src", JSON.stringify({ src: fresh, at: Date.now() })); return fresh; }
+    const s = JSON.parse(localStorage.getItem("gd_src") || "null");
+    return s && Date.now() - s.at < 30 * 86400000 ? s.src : "";
+  } catch (e) { return ""; }
+})();
 
-const wa = text => BRAND.whatsapp + "?text=" + encodeURIComponent(text);
+// Sent with every enquiry
+const PAGE = { region: "Lebanon", source: SRC };
+
+const waTag = text => (SRC ? text + "\n(" + SRC + ")" : text);
+const wa = text => BRAND.whatsapp + "?text=" + encodeURIComponent(waTag(text));
 
 const CONTENT = {
   lb: {
