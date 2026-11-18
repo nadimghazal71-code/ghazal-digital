@@ -68,6 +68,7 @@ function renderHero() {
   const h = t().hero;
   $("heroTitle").textContent = h.title;
   $("heroText").textContent = h.text;
+  $("heroOffer").innerHTML = h.offer;
   $("heroWizardBtn").textContent = t().wizard.open;
   $("heroWizardHint").textContent = t().wizard.openHint;
   $("heroCallPrefix").textContent = h.callPrefix;

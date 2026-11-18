@@ -45,6 +45,7 @@ const CONTENT = {
     hero: {
       title: "Bala wra2, bala Excel, w bala waja3 ras.",
       text: "Mna3mellak apps, websites w systems 3a2ad sheghlak — w iza 3endak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!.",
+      offer: "🎁 <b>Mnfarjik awwal prototype bbalesh</b>, w ba3den men7ke bel masari. Ma fi wala dollar abel.",
       callPrefix: "aw",
       facts: ["Byeshteghel 7atta bala internet", "3arabe · English", "As3ar wad7a men el bidaye"]
     },
@@ -134,8 +135,8 @@ const CONTENT = {
       heading: "Men awwal meeting la system shaghal",
       steps: [
         { n: "1", title: "meeting majjene", text: "Nos se3a 3al WhatsApp aw video call. Btfarjina kif 3am teshteghel hala2, w mn2ellak b sara7a iza el software huwwe el 7al aw la2." },
-        { n: "2", title: "3ard wade7", text: "Mna3tik kel shi maktoub: shu ra7 na3mel, ade byekhod wa2et w ade bikallef — abel ma nballesh. Bala mfeja2at." },
-        { n: "3", title: "sheghel 3a mara7el", text: "Btshouf nuskha shaghalle 3a bakkir, la nsalle7 el ghalat w huwwe ba3do rkhis. Ba3den mn3allem el staff w mnb2a 7addak ba3d ma nballesh." }
+        { n: "2", title: "Prototype bbalesh", text: "Mna3mellak awwal nuskha (prototype) w mnfarjik yeha 3al telephone. Ma btedfa3 shi la hon." },
+        { n: "3", title: "Ba3den men7ke bel masari", text: "Iza 3ajabak, mna3tik kel shi maktoub: shu ba3d fi, ade byekhod wa2et w ade bikallef. Ba3den mnkammel, mn3allem el staff w mnb2a 7addak. Iza ma 3ajabak, ma btedfa3 shi." }
       ]
     },
 
@@ -223,6 +224,7 @@ const CONTENT = {
     hero: {
       title: "No paper. No Excel. No headache.",
       text: "We build apps, websites and systems around the way you work: your staff log everything on their phones, and you see it all in real time. And if something's broken or eating your time, we fix it and make it run itself.",
+      offer: "🎁 <b>We show you a first prototype for free</b>, then we talk about payment. Not a dollar before that.",
       callPrefix: "or",
       facts: ["Works even without internet", "English · 3arabe", "Clear prices from day one"]
     },
@@ -308,8 +310,8 @@ const CONTENT = {
       heading: "From first chat to a working system",
       steps: [
         { n: "1", title: "Free chat", text: "Half an hour on WhatsApp or a video call. You show us how you work today, and we tell you honestly whether software is the answer." },
-        { n: "2", title: "Clear proposal", text: "You get everything in writing — what we'll build, how long it takes and what it costs — before we start. No surprises." },
-        { n: "3", title: "Built in steps", text: "You see a working version early, so mistakes get fixed while they're cheap. Then we train your staff and stay on hand after launch." }
+        { n: "2", title: "Free prototype", text: "We build a first version (a prototype) and show it to you on your phone. You pay nothing up to here." },
+        { n: "3", title: "Then we talk payment", text: "If you like it, you get everything in writing: what's left to build, how long it takes and what it costs. Then we finish it, train your staff and stay on hand. If you don't like it, you pay nothing." }
       ]
     },
 
