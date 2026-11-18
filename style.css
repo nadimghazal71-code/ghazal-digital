@@ -291,7 +291,7 @@ section[id] { scroll-margin-top: 80px; }
 .about-body .tag { margin-bottom: 12px; }
 .about-text { color: var(--text-dim); line-height: 1.85; font-size: 1.02rem; margin: 14px 0 0; max-width: 62ch; }
 
-/* Talabiyeh — our own product, in its green so it reads as a separate app */
+/* Talabiyye — our own product, in its green so it reads as a separate app */
 .product-wrap {
   display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
   background: linear-gradient(135deg, rgba(52,179,138,0.16), rgba(37,99,235,0.06)), var(--card);

@@ -125,7 +125,7 @@ function renderProduct() {
   $("productPoints").innerHTML = c.points.map(p => `<li>${p}</li>`).join("");
   const btn = $("productBtn");
   btn.textContent = c.cta;
-  btn.href = BRAND.talabiyeh + (lang === "en" ? "/?lang=en" : "/");
+  btn.href = BRAND.talabiyye + (lang === "en" ? "/?lang=en" : "/");
 }
 
 function renderAbout() {
