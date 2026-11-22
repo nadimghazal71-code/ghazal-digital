@@ -58,7 +58,7 @@ const CONTENT = {
     hero: {
       title: "Bala wra2, bala Excel, w bala waja3 ras.",
       text: "Mna3mellak apps, websites w systems 3a2ad sheghlak — w iza 3endak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!.",
-      offer: "🎁 <b>Mnfarjik awwal prototype bbalesh</b>, w ba3den men7ke bel masari. Ma fi wala dollar abel.",
+      offer: "🎁 <b>Mnfarjik awwal prototype bbalesh</b>, w ba3den men7ke bel masari. Bta3ref el se3er bel tamem abel ma telzam b shi.",
       callPrefix: "aw",
       facts: ["Byeshteghel 7atta bala internet", "3arabe · English", "As3ar wad7a men el bidaye"]
     },
@@ -237,7 +237,7 @@ const CONTENT = {
     hero: {
       title: "No paper. No Excel. No headache.",
       text: "We build apps, websites and systems around the way you work: your staff log everything on their phones, and you see it all in real time. And if something's broken or eating your time, we fix it and make it run itself.",
-      offer: "🎁 <b>We show you a first prototype for free</b>, then we talk about payment. Not a dollar before that.",
+      offer: "🎁 <b>We show you a first prototype for free</b>, then we talk about payment. You know the exact price before you commit to anything.",
       callPrefix: "or",
       facts: ["Works even without internet", "English · 3arabe", "Clear prices from day one"]
     },
