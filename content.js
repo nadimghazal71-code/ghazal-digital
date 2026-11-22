@@ -58,7 +58,7 @@ const CONTENT = {
     hero: {
       title: "Bala wra2, bala Excel, w bala waja3 ras.",
       text: "Mna3mellak apps, websites w systems 3a2ad sheghlak — w iza 3endak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!.",
-      offer: "🎁 <b>Mnfarjik awwal prototype bbalesh</b>, w ba3den men7ke bel masari. Bta3ref el se3er bel tamem abel ma telzam b shi.",
+      offer: "🎁 <b>Mnfarjik awwal prototype bbalesh</b>, w ba3den men7ke bel masari. Bta3ref el se3er bel tamem abel ma teltizim b shi.",
       callPrefix: "aw",
       facts: ["Byeshteghel 7atta bala internet", "3arabe · English", "As3ar wad7a men el bidaye"]
     },
@@ -148,7 +148,7 @@ const CONTENT = {
       heading: "Men awwal meeting la system shaghal",
       steps: [
         { n: "1", title: "meeting majjene", text: "Nos se3a 3al WhatsApp aw video call. Btfarjina kif 3am teshteghel hala2, w mn2ellak b sara7a iza el software huwwe el 7al aw la2." },
-        { n: "2", title: "Prototype bbalesh", text: "Mna3mellak awwal nuskha (prototype) w mnfarjik yeha 3al telephone. Ma btedfa3 shi la hon." },
+        { n: "2", title: "Prototype bbalesh", text: "Mna3mellak awwal naskha (prototype) w mnfarjik yeha 3al telephone. Ma btedfa3 shi la hon." },
         { n: "3", title: "Ba3den men7ke bel masari", text: "Iza 3ajabak, mna3tik kel shi maktoub: shu ba3d fi, ade byekhod wa2et w ade bikallef. Ba3den mnkammel, mn3allem el staff w mnb2a 7addak. Iza ma 3ajabak, ma btedfa3 shi." }
       ]
     },
@@ -199,7 +199,7 @@ const CONTENT = {
         },
         build: {
           tab: "App aw website",
-          intro: "Website jdid, app jdid, aw nuskha a7san men li 3endak.",
+          intro: "Website jdid, app jdid, aw naskha a7san men li 3endak.",
           subject: "Build / upgrade — Ghazal Digital",
           submit: "B3at",
           fields: [
