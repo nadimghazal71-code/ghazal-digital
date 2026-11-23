@@ -498,7 +498,7 @@ body:has(.wizard[open]) { overflow: hidden; }
 .wizard-done p { color: var(--text-dim); margin: 10px 0 22px; }
 
 /* Off-screen rather than display:none — bots skip fields that aren't rendered */
-.honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); opacity: 0; pointer-events: none; }
 
 /* Scroll reveal — script.js sets the hidden state inline, then adds .in-view */
 .section.in-view { opacity: 1 !important; transform: translateY(0) !important; }
@@ -607,3 +607,20 @@ body:has(.wizard[open]) { overflow: hidden; }
   .lang-option { padding: 2px 6px; }
   .nav-toggle { font-size: 1.35rem; padding: 0; }
 }
+
+/* Arabic (right-to-left). script.js sets <html dir="rtl" lang="ar">; flex and grid
+   layouts mirror by themselves, these rules fix the few things placed by side. */
+[lang="ar"] body { font-family: 'Poppins', 'Segoe UI', Tahoma, 'Noto Sans Arabic', 'Geeza Pro', system-ui, sans-serif; }
+/* letter-spacing breaks the joined Arabic letters */
+[lang="ar"] body *, .lang-option[lang="ar"] { letter-spacing: 0 !important; }
+[lang="ar"] .hero h1, [lang="ar"] h2, [lang="ar"] h3 { line-height: 1.4; }
+[lang="ar"] p, [lang="ar"] li { line-height: 1.85; }
+[dir="rtl"] .logo { direction: ltr; }
+[dir="rtl"] .logo small { margin-left: 0; margin-right: 4px; }
+[dir="rtl"] .path-points li { padding-left: 0; padding-right: 24px; }
+[dir="rtl"] .path-points li::before { left: auto; right: 0; }
+[dir="rtl"] .product-points li::before { margin-right: 0; margin-left: 8px; }
+[dir="rtl"] .enquiry-form select { padding-right: 16px; padding-left: 42px; background-position: left 18px center; }
+[dir="rtl"] .wizard-tile, [dir="rtl"] .wizard-chip { text-align: right; }
+/* phone numbers and the like stay left-to-right inside Arabic text */
+[dir="rtl"] input[type="tel"], [dir="rtl"] input[type="email"] { direction: ltr; text-align: right; }

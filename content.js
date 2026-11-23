@@ -1,8 +1,9 @@
 /*
-  All the text on the site, in two languages for the Lebanese market:
-    lb — Lebanese Arabic in Latin letters (Arabizi). The default.
-    en — English.
-  Both have the same shape; script.js renders whichever is active, with a
+  All the text on the site, in three languages for the Lebanese market:
+    en — English. The default.
+    ar — Arabic (Modern Standard, right-to-left; dir: "rtl").
+    lb — Lebanese Arabic in Latin letters (Arabizi), kept as a third option.
+  All have the same shape; script.js renders whichever is active, with a
   switch in the navbar. The order of the keys below sets the default: the
   first one is what a new visitor sees.
 
@@ -44,6 +45,357 @@ const waTag = text => (SRC ? text + "\n(" + SRC + ")" : text);
 const wa = text => BRAND.whatsapp + "?text=" + encodeURIComponent(waTag(text));
 
 const CONTENT = {
+  en: {
+    langLabel: "EN",
+    htmlLang: "en",
+    meta: {
+      title: "Ghazal — Digital Solutions | Apps, websites & systems for your business",
+      description: "No paper, no Excel, no headache. Apps, websites and systems built around how your business works — and if something's broken or eating your time, we fix it and automate it."
+    },
+    nav: [["#services", "What we do"], ["#talabiyye", "Talabiyye"], ["#process", "How it works"], ["#contact", "Contact"]],
+    langSwitch: { aria: "Change language" },
+    call: { label: "Chat with us on WhatsApp", href: wa("Hi, I saw your website and I'd like to ask about something for my business."), style: "whatsapp" },
+
+    hero: {
+      title: "No paper. No Excel. No headache.",
+      text: "We build apps, websites and systems around the way you work: your staff log everything on their phones, and you see it all in real time. And if something's broken or eating your time, we fix it and make it run itself.",
+      offer: "🎁 <b>We show you a first prototype for free</b>, then we talk about payment. You know the exact price before you commit to anything.",
+      callPrefix: "or",
+      facts: ["Works even without internet", "English · العربية", "Clear prices from day one"]
+    },
+
+    wizard: {
+      open: "Help me choose",
+      openHint: "Not sure what you need? Answer 3 quick questions.",
+      banner: "Not sure which form? Let us help you choose.",
+      close: "Close",
+      back: "← Back",
+      next: "Next →",
+      stepLabel: "Step {n} of {total}",
+      category: { q: "What are you looking for?", hint: "Pick one." },
+      details: { q: "What should it do?", hint: "Pick everything that applies." },
+      timing: { q: "When do you need it?", hint: "Not sure? Skip ahead." },
+      contact: { q: "Almost done — where can we reach you?", summary: "Your request", name: "Your name", phone: "WhatsApp number", note: "Anything else? (optional)", send: "Send request", whatsapp: "Or send it on WhatsApp" },
+      categories: [
+        { id: "website", icon: "🌐", title: "Website", text: "Be found online and get customers",
+          details: ["A page that presents my business", "Online shop / take orders", "Bookings & appointments", "Menu or product catalogue"] },
+        { id: "app", icon: "📱", title: "App", text: "For your staff or your customers",
+          details: ["For my staff to log stock, orders or deliveries", "For my customers to order or book", "Loyalty points & offers", "Works without internet"] },
+        { id: "both", icon: "🔗", title: "Website + App", text: "Everything working together",
+          details: ["Customers order online, staff handle it in the app", "Bookings online, managed from a phone", "Catalogue on the site, orders in the app", "Not sure yet — help me plan it"] },
+        { id: "system", icon: "⚙️", title: "Business system", text: "Stock, orders and staff in one place",
+          details: ["Stock & inventory", "Orders & deliveries", "Customers & follow-ups", "Staff, shifts & tasks", "Dashboard & reports"] },
+        { id: "billing", icon: "🧾", title: "Billing & invoices", text: "Invoices, receipts and who owes what",
+          details: ["Print-ready invoices & receipts", "Track who owes me money", "Monthly statement per client", "Export for the accountant"] },
+        { id: "fix", icon: "🛠️", title: "Fix or improve", text: "Something you have isn't working well",
+          details: ["My website is slow or broken", "My app has problems", "My Excel is out of control", "Automate work we repeat every day", "Connect programs that don't talk"] }
+      ],
+      timeline: ["As soon as possible", "Within 1–3 months", "No rush"],
+      subject: "Guided request — Ghazal Digital",
+      required: "Please add your name and WhatsApp number.",
+      sending: "Sending…",
+      done: { title: "Got it! 🎉", text: "We'll message you on WhatsApp shortly.", close: "Done" },
+      error: "Something went wrong. Try again, or send it on WhatsApp.",
+      wa: { intro: "Hi! I used the guide on your website.", category: "I'm looking for", details: "It should cover", timeline: "When", name: "Name", note: "Note" }
+    },
+
+    services: {
+      tag: "What we do",
+      heading: "Two ways to take work off your plate",
+      paths: [
+        {
+          id: "fix",
+          icon: "🛠️",
+          title: "Fix, upgrade & automate",
+          lead: "You have a system, a website or an Excel sheet — but it's not working the way it should?",
+          points: [
+            "Website slow or broken? We fix it.",
+            "System outdated? We modernise it and add what's missing.",
+            "Same work every day — invoices, reports, data entry? We make it run itself.",
+            "Programs that don't talk to each other? We connect them."
+          ],
+          cta: "Tell us the problem →"
+        },
+        {
+          id: "build",
+          icon: "🚀",
+          title: "New apps & websites",
+          lead: "Want something new, made for your shop or business?",
+          points: [
+            "An app for your staff to log stock, orders and customers on their phones",
+            "A website that brings you customers, in English and Arabic",
+            "Systems that keep working when the power or the internet cuts out",
+            "A dashboard to see your sales and stock in real time"
+          ],
+          cta: "Let's get started →"
+        }
+      ]
+    },
+
+    product: {
+      tag: "Our product",
+      heading: "Talabiyye: all your Instagram and WhatsApp orders in one place",
+      text: "Don't need a custom system? Start today with Talabiyye: one link in your bio, customers order on their own, and you see orders, stock, drivers and the cash they collect.",
+      points: ["Order link for your Instagram bio", "Stock updates by itself", "Drivers and cash in USD and LBP", "Ready-made WhatsApp messages"],
+      cta: "See Talabiyye →"
+    },
+
+    process: {
+      tag: "How it works",
+      heading: "From first chat to a working system",
+      steps: [
+        { n: "1", title: "Free chat", text: "Half an hour on WhatsApp or a video call. You show us how you work today, and we tell you honestly whether software is the answer." },
+        { n: "2", title: "Free prototype", text: "We build a first version (a prototype) and show it to you on your phone. You pay nothing up to here." },
+        { n: "3", title: "Then we talk payment", text: "If you like it, you get everything in writing: what's left to build, how long it takes and what it costs. Then we finish it, train your staff and stay on hand. If you don't like it, you pay nothing." }
+      ]
+    },
+
+    why: {
+      tag: "Why us",
+      heading: "Built for how business works in Lebanon",
+      items: [
+        { icon: "⚡", title: "Works without internet", text: "Power gone? Internet down? The system keeps going and syncs when the line is back." },
+        { icon: "💬", title: "On WhatsApp", text: "Orders, invoices and reports arrive on WhatsApp — where you and your customers already are." },
+        { icon: "💵", title: "Clear prices", text: "Everything in dollars and in writing from the start. Nothing hidden." },
+        { icon: "🤝", title: "One contact, start to finish", text: "You talk to the same person from the first chat to the last fix — not a call centre. And we answer." }
+      ]
+    },
+
+    about: {
+      tag: "About us",
+      heading: "Who we are",
+      text: "Ghazal — Digital Solutions builds and fixes practical software for shops and small businesses. Our background is banking and fintech software, where every number has to be right. We talk to you in plain language and stay with you from the first chat to the last fix."
+    },
+
+    contact: {
+      tag: "Contact",
+      heading: "Tell us what you need",
+      text: "A rough idea is enough. Pick the form that fits and write us a few lines — or message us straight on WhatsApp.",
+      quick: { title: "Prefer to chat?", text: "Message us on WhatsApp and we will get back to you shortly." },
+      tabsLabel: "Choose a form",
+      sending: "Sending…",
+      success: "Got it! We'll get back to you shortly.",
+      error: "Something went wrong. Try again, or message us on WhatsApp.",
+      forms: {
+        fix: {
+          tab: "Fix / automate",
+          intro: "Something not working, outdated, or eating your time?",
+          subject: "Fix / upgrade / automate — Ghazal Digital",
+          submit: "Send",
+          fields: [
+            { name: "name", label: "Your name", type: "text", required: true, half: true, autocomplete: "name" },
+            { name: "phone", label: "WhatsApp number", type: "tel", required: true, half: true, autocomplete: "tel" },
+            { name: "email", label: "Email (optional)", type: "email", half: true, autocomplete: "email" },
+            { name: "business", label: "Shop or company name (optional)", type: "text", half: true, autocomplete: "organization" },
+            { name: "topic", label: "What needs fixing?", type: "select", required: true, half: true,
+              options: ["A website", "An app or system", "Excel or a paper notebook", "Programs that should work together", "Something else"] },
+            { name: "urgency", label: "How urgent is it?", type: "select", half: true,
+              options: ["It's broken right now", "In the coming weeks", "Just asking"] },
+            { name: "message", label: "What's the problem, or what's eating your time?", type: "textarea", required: true }
+          ]
+        },
+        build: {
+          tab: "App or website",
+          intro: "A new website, a new app, or a better version of what you have.",
+          subject: "Build / upgrade — Ghazal Digital",
+          submit: "Send",
+          fields: [
+            { name: "name", label: "Your name", type: "text", required: true, half: true, autocomplete: "name" },
+            { name: "phone", label: "WhatsApp number", type: "tel", required: true, half: true, autocomplete: "tel" },
+            { name: "email", label: "Email (optional)", type: "email", half: true, autocomplete: "email" },
+            { name: "business", label: "Shop or company name (optional)", type: "text", half: true, autocomplete: "organization" },
+            { name: "project", label: "What do you need?", type: "select", required: true,
+              options: ["A new website", "Upgrade my existing website", "A new app for staff or customers", "Upgrade my existing app", "An internal system or dashboard", "Not sure yet"] },
+            { name: "timeline", label: "When do you need it?", type: "select",
+              options: ["As soon as possible", "Within 1–3 months", "Later on", "No rush"] },
+            { name: "message", label: "Tell us about your business and what you need", type: "textarea", required: true }
+          ]
+        }
+      }
+    },
+
+    footer: {
+      copy: "© {year} Ghazal — Digital Solutions",
+      legal: "Legal & privacy"
+    }
+  },
+
+  ar: {
+    langLabel: "عربي",
+    htmlLang: "ar",
+    dir: "rtl",
+    meta: {
+      title: "Ghazal — Digital Solutions | تطبيقات ومواقع وأنظمة لعملك",
+      description: "بلا ورق، بلا Excel، وبلا وجع راس. نبني تطبيقات ومواقع وأنظمة على قياس عملك، وإذا كان عندك شيء معطّل أو يأخذ من وقتك، نصلحه ونجعله يعمل تلقائيًا."
+    },
+    nav: [["#services", "خدماتنا"], ["#talabiyye", "Talabiyye"], ["#process", "كيف نعمل"], ["#contact", "تواصل معنا"]],
+    langSwitch: { aria: "تغيير اللغة" },
+    call: { label: "تواصل معنا على واتساب", href: wa("مرحبًا، رأيت موقعكم وأودّ أن أسأل عن شيء يخص عملي."), style: "whatsapp" },
+
+    hero: {
+      title: "بلا ورق، بلا Excel، وبلا وجع راس.",
+      text: "نبني تطبيقات ومواقع وأنظمة على قياس طريقة عملك: فريقك يسجّل كل شيء من الهاتف، وأنت ترى كل شيء لحظة بلحظة. وإذا كان عندك شيء معطّل أو يأخذ من وقتك، نصلحه ونجعله يعمل تلقائيًا.",
+      offer: "🎁 <b>نُريك أول نموذج (prototype) مجانًا</b>، ثم نتحدث عن الدفع. تعرف السعر بالتمام قبل أن تلتزم بأي شيء.",
+      callPrefix: "أو",
+      facts: ["يعمل حتى بدون إنترنت", "English · العربية", "أسعار واضحة من البداية"]
+    },
+
+    wizard: {
+      open: "ساعدني في الاختيار",
+      openHint: "لست متأكدًا مما تحتاج؟ أجب عن 3 أسئلة سريعة.",
+      banner: "لست متأكدًا أي نموذج يناسبك؟ دعنا نساعدك.",
+      close: "إغلاق",
+      back: "→ رجوع",
+      next: "التالي ←",
+      stepLabel: "الخطوة {n} من {total}",
+      category: { q: "عن ماذا تبحث؟", hint: "اختر واحدًا." },
+      details: { q: "ماذا يجب أن يفعل؟", hint: "اختر كل ما ينطبق." },
+      timing: { q: "متى تحتاجه؟", hint: "لست متأكدًا؟ يمكنك التخطي." },
+      contact: { q: "اقتربنا من النهاية، كيف نتواصل معك؟", summary: "طلبك", name: "اسمك", phone: "رقم الواتساب", note: "شيء آخر؟ (اختياري)", send: "أرسل الطلب", whatsapp: "أو أرسله على واتساب" },
+      categories: [
+        { id: "website", icon: "🌐", title: "موقع إلكتروني", text: "لتكون موجودًا على الإنترنت وتجلب زبائن",
+          details: ["صفحة تعرّف بعملي", "متجر إلكتروني / استقبال طلبات", "حجوزات ومواعيد", "قائمة طعام أو كتالوج منتجات"] },
+        { id: "app", icon: "📱", title: "تطبيق", text: "لفريقك أو لزبائنك",
+          details: ["لفريقي ليسجّل المخزون أو الطلبات أو التوصيل", "لزبائني ليطلبوا أو يحجزوا", "نقاط وعروض للزبائن", "يعمل بدون إنترنت"] },
+        { id: "both", icon: "🔗", title: "موقع + تطبيق", text: "كل شيء يعمل معًا",
+          details: ["الزبون يطلب أونلاين والفريق يتابع في التطبيق", "حجوزات أونلاين وإدارتها من الهاتف", "كتالوج على الموقع وطلبات في التطبيق", "لست متأكدًا بعد، ساعدني في التخطيط"] },
+        { id: "system", icon: "⚙️", title: "نظام لإدارة العمل", text: "المخزون والطلبات والفريق في مكان واحد",
+          details: ["المخزون والجرد", "الطلبات والتوصيل", "الزبائن والمتابعة", "الفريق والدوامات والمهام", "لوحة تحكم وتقارير"] },
+        { id: "billing", icon: "🧾", title: "فواتير وحسابات", text: "فواتير وإيصالات ومن عليه مستحقات",
+          details: ["فواتير وإيصالات جاهزة للطباعة", "متابعة من عليه مستحقات", "كشف حساب شهري لكل زبون", "تصدير للمحاسب"] },
+        { id: "fix", icon: "🛠️", title: "إصلاح أو تحسين", text: "شيء عندك لا يعمل كما يجب",
+          details: ["موقعي بطيء أو معطّل", "تطبيقي فيه مشاكل", "ملف الـ Excel خرج عن السيطرة", "أتمتة عمل نكرّره كل يوم", "ربط برامج لا تتواصل مع بعضها"] }
+      ],
+      timeline: ["في أقرب وقت", "خلال 1–3 أشهر", "لا عجلة"],
+      subject: "Guided request — Ghazal Digital",
+      required: "الرجاء إضافة اسمك ورقم الواتساب.",
+      sending: "جارٍ الإرسال…",
+      done: { title: "وصلنا طلبك! 🎉", text: "سنراسلك على واتساب قريبًا.", close: "تم" },
+      error: "حدث خطأ ما. حاول مرة أخرى، أو أرسله على واتساب.",
+      wa: { intro: "مرحبًا! استخدمت الدليل على موقعكم.", category: "أبحث عن", details: "يجب أن يشمل", timeline: "متى", name: "الاسم", note: "ملاحظة" }
+    },
+
+    services: {
+      tag: "خدماتنا",
+      heading: "طريقتان لنخفّف عنك عبء العمل",
+      paths: [
+        {
+          id: "fix",
+          icon: "🛠️",
+          title: "إصلاح وتطوير وأتمتة",
+          lead: "عندك نظام أو موقع أو ملف Excel، لكنه لا يعمل كما يجب؟",
+          points: [
+            "موقعك بطيء أو معطّل؟ نصلحه.",
+            "نظامك قديم؟ نحدّثه ونضيف ما ينقصه.",
+            "عمل يتكرر كل يوم، فواتير وتقارير وإدخال بيانات؟ نجعله يعمل تلقائيًا.",
+            "برامج لا تتواصل مع بعضها؟ نربطها ببعض."
+          ],
+          cta: "أخبرنا عن المشكلة ←"
+        },
+        {
+          id: "build",
+          icon: "🚀",
+          title: "تطبيقات ومواقع جديدة",
+          lead: "تريد شيئًا جديدًا، مصممًا لمحلك أو شركتك؟",
+          points: [
+            "تطبيق لفريقك ليسجّل المخزون والطلبات والزبائن من الهاتف",
+            "موقع يجلب لك الزبائن، بالعربية والإنجليزية",
+            "أنظمة تستمر في العمل حتى عند انقطاع الكهرباء أو الإنترنت",
+            "لوحة تحكم لترى مبيعاتك ومخزونك لحظة بلحظة"
+          ],
+          cta: "لنبدأ ←"
+        }
+      ]
+    },
+
+    product: {
+      tag: "منتجنا",
+      heading: "Talabiyye: كل طلبات Instagram وواتساب في مكان واحد",
+      text: "لا تحتاج نظامًا خاصًا؟ ابدأ اليوم مع Talabiyye: رابط واحد في البايو، الزبون يطلب بنفسه، وأنت ترى الطلبات والمخزون والسائقين والمبالغ النقدية التي يحصّلونها.",
+      points: ["رابط للطلبات في بايو Instagram", "المخزون يتحدّث تلقائيًا", "السائقون والنقد بالدولار والليرة", "رسائل واتساب جاهزة"],
+      cta: "اكتشف Talabiyye ←"
+    },
+
+    process: {
+      tag: "كيف نعمل",
+      heading: "من أول محادثة إلى نظام يعمل",
+      steps: [
+        { n: "1", title: "محادثة مجانية", text: "نصف ساعة على واتساب أو مكالمة فيديو. تُرينا كيف تعمل اليوم، ونقول لك بصراحة إن كان البرنامج هو الحل أم لا." },
+        { n: "2", title: "نموذج مجاني", text: "نبني نسخة أولى (prototype) ونُريك إياها على هاتفك. لا تدفع شيئًا حتى هذه المرحلة." },
+        { n: "3", title: "ثم نتحدث عن الدفع", text: "إذا أعجبك، تحصل على كل شيء مكتوبًا: ما بقي للبناء، والمدة، والتكلفة. ثم نُكمل العمل وندرّب فريقك ونبقى إلى جانبك. وإذا لم يعجبك، لا تدفع شيئًا." }
+      ]
+    },
+
+    why: {
+      tag: "لماذا نحن",
+      heading: "مصمّم لطريقة العمل في لبنان",
+      items: [
+        { icon: "⚡", title: "يعمل بدون إنترنت", text: "انقطعت الكهرباء؟ توقّف الإنترنت؟ النظام يستمر في العمل ويتزامن عند عودة الخط." },
+        { icon: "💬", title: "على واتساب", text: "الطلبات والفواتير والتقارير تصلك على واتساب، حيث أنت وزبائنك أصلًا." },
+        { icon: "💵", title: "أسعار واضحة", text: "كل شيء بالدولار ومكتوب من البداية. لا شيء مخفي." },
+        { icon: "🤝", title: "شخص واحد من البداية للنهاية", text: "تتحدث مع الشخص نفسه من أول محادثة إلى آخر تعديل، لا مع مركز اتصال. ونردّ عليك." }
+      ]
+    },
+
+    about: {
+      tag: "من نحن",
+      heading: "أهلًا بك في Ghazal Digital",
+      text: "Ghazal — Digital Solutions تبني وتصلح برامج عملية للمحلات والشركات الصغيرة. خبرتنا من برامج البنوك والتكنولوجيا المالية، حيث كل رقم يجب أن يكون صحيحًا. نتحدث معك بلغة واضحة، ونبقى معك من أول محادثة إلى آخر تعديل."
+    },
+
+    contact: {
+      tag: "تواصل معنا",
+      heading: "أخبرنا ماذا تحتاج",
+      text: "فكرة تقريبية تكفي. اختر النموذج المناسب واكتب لنا بضعة أسطر، أو راسلنا مباشرة على واتساب.",
+      quick: { title: "تفضّل المحادثة؟", text: "راسلنا على واتساب وسنردّ عليك قريبًا." },
+      tabsLabel: "اختر نموذجًا",
+      sending: "جارٍ الإرسال…",
+      success: "وصلتنا رسالتك! سنردّ عليك قريبًا.",
+      error: "حدث خطأ ما. حاول مرة أخرى، أو راسلنا على واتساب.",
+      forms: {
+        fix: {
+          tab: "إصلاح / أتمتة",
+          intro: "شيء لا يعمل، أو قديم، أو يأخذ من وقتك؟",
+          subject: "Fix / upgrade / automate — Ghazal Digital",
+          submit: "إرسال",
+          fields: [
+            { name: "name", label: "اسمك", type: "text", required: true, half: true, autocomplete: "name" },
+            { name: "phone", label: "رقم الواتساب", type: "tel", required: true, half: true, autocomplete: "tel" },
+            { name: "email", label: "البريد الإلكتروني (اختياري)", type: "email", half: true, autocomplete: "email" },
+            { name: "business", label: "اسم المحل أو الشركة (اختياري)", type: "text", half: true, autocomplete: "organization" },
+            { name: "topic", label: "ما الذي يحتاج إلى إصلاح؟", type: "select", required: true, half: true,
+              options: ["موقع إلكتروني", "تطبيق أو نظام", "Excel أو دفتر ورقي", "برامج يجب أن تعمل معًا", "شيء آخر"] },
+            { name: "urgency", label: "ما مدى الاستعجال؟", type: "select", half: true,
+              options: ["معطّل الآن", "خلال الأسابيع القادمة", "مجرد استفسار"] },
+            { name: "message", label: "ما المشكلة، أو ما الذي يأخذ من وقتك؟", type: "textarea", required: true }
+          ]
+        },
+        build: {
+          tab: "تطبيق أو موقع",
+          intro: "موقع جديد، تطبيق جديد، أو نسخة أفضل مما عندك.",
+          subject: "Build / upgrade — Ghazal Digital",
+          submit: "إرسال",
+          fields: [
+            { name: "name", label: "اسمك", type: "text", required: true, half: true, autocomplete: "name" },
+            { name: "phone", label: "رقم الواتساب", type: "tel", required: true, half: true, autocomplete: "tel" },
+            { name: "email", label: "البريد الإلكتروني (اختياري)", type: "email", half: true, autocomplete: "email" },
+            { name: "business", label: "اسم المحل أو الشركة (اختياري)", type: "text", half: true, autocomplete: "organization" },
+            { name: "project", label: "ماذا تحتاج؟", type: "select", required: true,
+              options: ["موقع جديد", "تطوير موقعي الحالي", "تطبيق جديد للفريق أو للزبائن", "تطوير تطبيقي الحالي", "نظام داخلي أو لوحة تحكم", "لست متأكدًا بعد"] },
+            { name: "timeline", label: "متى تحتاجه؟", type: "select",
+              options: ["في أقرب وقت", "خلال 1–3 أشهر", "لاحقًا", "لا عجلة"] },
+            { name: "message", label: "أخبرنا عن عملك وما تحتاجه", type: "textarea", required: true }
+          ]
+        }
+      }
+    },
+
+    footer: {
+      copy: "© {year} Ghazal — Digital Solutions",
+      legal: "الشروط والخصوصية"
+    }
+  },
+
   lb: {
     langLabel: "3arabe",
     htmlLang: "ar-Latn",
@@ -52,7 +404,7 @@ const CONTENT = {
       description: "Bala wra2, bala Excel, w bala waja3 ras. Mna3mellak apps, websites w systems 3a2ad sheghlak — w iza 3endak shi 3atlan aw 3am yekhud wa2tak, mensal7u w menkhalli Automatic!."
     },
     nav: [["#services", "Shu mna3mel"], ["#talabiyye", "Talabiyye"], ["#process", "Kif mnshteghel"], ["#contact", "7kina"]],
-    langSwitch: { aria: "Show the English version" },
+    langSwitch: { aria: "Ghayyer el lugha" },
     call: { label: "7kina 3al WhatsApp", href: wa("Marhaba, shefet el website w badde es2al 3an shi la sheghle."), style: "whatsapp" },
 
     hero: {
@@ -212,181 +564,6 @@ const CONTENT = {
             { name: "timeline", label: "Emta baddak yeh?", type: "select",
               options: ["Bi2a2rab wa2et", "Khilel 1–3 ishhor", "Ba3d shway", "Ma fi 3ajle"] },
             { name: "message", label: "Khabberna 3an sheghlak w shu baddak ya3mel", type: "textarea", required: true }
-          ]
-        }
-      }
-    },
-
-    footer: {
-      copy: "© {year} Ghazal — Digital Solutions",
-      legal: "Legal & privacy"
-    }
-  },
-
-  en: {
-    langLabel: "EN",
-    htmlLang: "en",
-    meta: {
-      title: "Ghazal — Digital Solutions | Apps, websites & systems for your business",
-      description: "No paper, no Excel, no headache. Apps, websites and systems built around how your business works — and if something's broken or eating your time, we fix it and automate it."
-    },
-    nav: [["#services", "What we do"], ["#talabiyye", "Talabiyye"], ["#process", "How it works"], ["#contact", "Contact"]],
-    langSwitch: { aria: "Shoufa bel 3arabe" },
-    call: { label: "Chat with us on WhatsApp", href: wa("Hi, I saw your website and I'd like to ask about something for my business."), style: "whatsapp" },
-
-    hero: {
-      title: "No paper. No Excel. No headache.",
-      text: "We build apps, websites and systems around the way you work: your staff log everything on their phones, and you see it all in real time. And if something's broken or eating your time, we fix it and make it run itself.",
-      offer: "🎁 <b>We show you a first prototype for free</b>, then we talk about payment. You know the exact price before you commit to anything.",
-      callPrefix: "or",
-      facts: ["Works even without internet", "English · 3arabe", "Clear prices from day one"]
-    },
-
-    wizard: {
-      open: "Help me choose",
-      openHint: "Not sure what you need? Answer 3 quick questions.",
-      banner: "Not sure which form? Let us help you choose.",
-      close: "Close",
-      back: "← Back",
-      next: "Next →",
-      stepLabel: "Step {n} of {total}",
-      category: { q: "What are you looking for?", hint: "Pick one." },
-      details: { q: "What should it do?", hint: "Pick everything that applies." },
-      timing: { q: "When do you need it?", hint: "Not sure? Skip ahead." },
-      contact: { q: "Almost done — where can we reach you?", summary: "Your request", name: "Your name", phone: "WhatsApp number", note: "Anything else? (optional)", send: "Send request", whatsapp: "Or send it on WhatsApp" },
-      categories: [
-        { id: "website", icon: "🌐", title: "Website", text: "Be found online and get customers",
-          details: ["A page that presents my business", "Online shop / take orders", "Bookings & appointments", "Menu or product catalogue"] },
-        { id: "app", icon: "📱", title: "App", text: "For your staff or your customers",
-          details: ["For my staff to log stock, orders or deliveries", "For my customers to order or book", "Loyalty points & offers", "Works without internet"] },
-        { id: "both", icon: "🔗", title: "Website + App", text: "Everything working together",
-          details: ["Customers order online, staff handle it in the app", "Bookings online, managed from a phone", "Catalogue on the site, orders in the app", "Not sure yet — help me plan it"] },
-        { id: "system", icon: "⚙️", title: "Business system", text: "Stock, orders and staff in one place",
-          details: ["Stock & inventory", "Orders & deliveries", "Customers & follow-ups", "Staff, shifts & tasks", "Dashboard & reports"] },
-        { id: "billing", icon: "🧾", title: "Billing & invoices", text: "Invoices, receipts and who owes what",
-          details: ["Print-ready invoices & receipts", "Track who owes me money", "Monthly statement per client", "Export for the accountant"] },
-        { id: "fix", icon: "🛠️", title: "Fix or improve", text: "Something you have isn't working well",
-          details: ["My website is slow or broken", "My app has problems", "My Excel is out of control", "Automate work we repeat every day", "Connect programs that don't talk"] }
-      ],
-      timeline: ["As soon as possible", "Within 1–3 months", "No rush"],
-      subject: "Guided request — Ghazal Digital",
-      required: "Please add your name and WhatsApp number.",
-      sending: "Sending…",
-      done: { title: "Got it! 🎉", text: "We'll message you on WhatsApp shortly.", close: "Done" },
-      error: "Something went wrong. Try again, or send it on WhatsApp.",
-      wa: { intro: "Hi! I used the guide on your website.", category: "I'm looking for", details: "It should cover", timeline: "When", name: "Name", note: "Note" }
-    },
-
-    services: {
-      tag: "What we do",
-      heading: "Two ways to take work off your plate",
-      paths: [
-        {
-          id: "fix",
-          icon: "🛠️",
-          title: "Fix, upgrade & automate",
-          lead: "You have a system, a website or an Excel sheet — but it's not working the way it should?",
-          points: [
-            "Website slow or broken? We fix it.",
-            "System outdated? We modernise it and add what's missing.",
-            "Same work every day — invoices, reports, data entry? We make it run itself.",
-            "Programs that don't talk to each other? We connect them."
-          ],
-          cta: "Tell us the problem →"
-        },
-        {
-          id: "build",
-          icon: "🚀",
-          title: "New apps & websites",
-          lead: "Want something new, made for your shop or business?",
-          points: [
-            "An app for your staff to log stock, orders and customers on their phones",
-            "A website that brings you customers, in English and Arabic",
-            "Systems that keep working when the power or the internet cuts out",
-            "A dashboard to see your sales and stock in real time"
-          ],
-          cta: "Let's get started →"
-        }
-      ]
-    },
-
-    product: {
-      tag: "Our product",
-      heading: "Talabiyye: all your Instagram and WhatsApp orders in one place",
-      text: "Don't need a custom system? Start today with Talabiyye: one link in your bio, customers order on their own, and you see orders, stock, drivers and the cash they collect.",
-      points: ["Order link for your Instagram bio", "Stock updates by itself", "Drivers and cash in USD and LBP", "Ready-made WhatsApp messages"],
-      cta: "See Talabiyye →"
-    },
-
-    process: {
-      tag: "How it works",
-      heading: "From first chat to a working system",
-      steps: [
-        { n: "1", title: "Free chat", text: "Half an hour on WhatsApp or a video call. You show us how you work today, and we tell you honestly whether software is the answer." },
-        { n: "2", title: "Free prototype", text: "We build a first version (a prototype) and show it to you on your phone. You pay nothing up to here." },
-        { n: "3", title: "Then we talk payment", text: "If you like it, you get everything in writing: what's left to build, how long it takes and what it costs. Then we finish it, train your staff and stay on hand. If you don't like it, you pay nothing." }
-      ]
-    },
-
-    why: {
-      tag: "Why us",
-      heading: "Built for how business works in Lebanon",
-      items: [
-        { icon: "⚡", title: "Works without internet", text: "Power gone? Internet down? The system keeps going and syncs when the line is back." },
-        { icon: "💬", title: "On WhatsApp", text: "Orders, invoices and reports arrive on WhatsApp — where you and your customers already are." },
-        { icon: "💵", title: "Clear prices", text: "Everything in dollars and in writing from the start. Nothing hidden." },
-        { icon: "🤝", title: "One contact, start to finish", text: "You talk to the same person from the first chat to the last fix — not a call centre. And we answer." }
-      ]
-    },
-
-    about: {
-      tag: "About us",
-      heading: "Who we are",
-      text: "Ghazal — Digital Solutions builds and fixes practical software for shops and small businesses. Our background is banking and fintech software, where every number has to be right. We talk to you in plain language and stay with you from the first chat to the last fix."
-    },
-
-    contact: {
-      tag: "Contact",
-      heading: "Tell us what you need",
-      text: "A rough idea is enough. Pick the form that fits and write us a few lines — or message us straight on WhatsApp.",
-      quick: { title: "Prefer to chat?", text: "Message us on WhatsApp and we will get back to you shortly." },
-      tabsLabel: "Choose a form",
-      sending: "Sending…",
-      success: "Got it! We'll get back to you shortly.",
-      error: "Something went wrong. Try again, or message us on WhatsApp.",
-      forms: {
-        fix: {
-          tab: "Fix / automate",
-          intro: "Something not working, outdated, or eating your time?",
-          subject: "Fix / upgrade / automate — Ghazal Digital",
-          submit: "Send",
-          fields: [
-            { name: "name", label: "Your name", type: "text", required: true, half: true, autocomplete: "name" },
-            { name: "phone", label: "WhatsApp number", type: "tel", required: true, half: true, autocomplete: "tel" },
-            { name: "email", label: "Email (optional)", type: "email", half: true, autocomplete: "email" },
-            { name: "business", label: "Shop or company name (optional)", type: "text", half: true, autocomplete: "organization" },
-            { name: "topic", label: "What needs fixing?", type: "select", required: true, half: true,
-              options: ["A website", "An app or system", "Excel or a paper notebook", "Programs that should work together", "Something else"] },
-            { name: "urgency", label: "How urgent is it?", type: "select", half: true,
-              options: ["It's broken right now", "In the coming weeks", "Just asking"] },
-            { name: "message", label: "What's the problem, or what's eating your time?", type: "textarea", required: true }
-          ]
-        },
-        build: {
-          tab: "App or website",
-          intro: "A new website, a new app, or a better version of what you have.",
-          subject: "Build / upgrade — Ghazal Digital",
-          submit: "Send",
-          fields: [
-            { name: "name", label: "Your name", type: "text", required: true, half: true, autocomplete: "name" },
-            { name: "phone", label: "WhatsApp number", type: "tel", required: true, half: true, autocomplete: "tel" },
-            { name: "email", label: "Email (optional)", type: "email", half: true, autocomplete: "email" },
-            { name: "business", label: "Shop or company name (optional)", type: "text", half: true, autocomplete: "organization" },
-            { name: "project", label: "What do you need?", type: "select", required: true,
-              options: ["A new website", "Upgrade my existing website", "A new app for staff or customers", "Upgrade my existing app", "An internal system or dashboard", "Not sure yet"] },
-            { name: "timeline", label: "When do you need it?", type: "select",
-              options: ["As soon as possible", "Within 1–3 months", "Later on", "No rush"] },
-            { name: "message", label: "Tell us about your business and what you need", type: "textarea", required: true }
           ]
         }
       }

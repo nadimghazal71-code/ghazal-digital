@@ -1,6 +1,6 @@
 /*
   Reads CONTENT / BRAND / PAGE from content.js and renders the active language
-  (Arabizi or English) into the empty placeholders in index.html. renderAll()
+  (English, Arabic or Arabizi) into the empty placeholders in index.html. renderAll()
   runs on load and again whenever the language is switched.
 
   Also wires up the mobile nav, the two enquiry forms (tabbed, with #fix and
@@ -9,8 +9,8 @@
 
 const LANG_KEY = "lang";
 
-// ?lang=en links straight to English; otherwise a visitor's last choice, else
-// the first language in content.js (Arabizi).
+// ?lang=ar (or en / lb) links straight to a language; otherwise a visitor's last
+// choice, else the first language in content.js (English).
 function initialLang() {
   const fromUrl = new URLSearchParams(location.search).get("lang");
   if (CONTENT[fromUrl]) return fromUrl;
@@ -50,9 +50,11 @@ function renderMeta() {
 
   // "lb" is our own key for Arabizi; htmlLang is the real language tag (ar-Latn)
   document.documentElement.lang = t().htmlLang;
+  // Arabic reads right-to-left; the layout mirrors through [dir="rtl"] in style.css
+  document.documentElement.dir = t().dir || "ltr";
   const btn = $("langToggle");
   btn.innerHTML = Object.keys(CONTENT)
-    .map(code => `<span class="lang-option${code === lang ? " is-active" : ""}">${CONTENT[code].langLabel}</span>`)
+    .map(code => `<span class="lang-option${code === lang ? " is-active" : ""}" data-lang="${code}" lang="${CONTENT[code].htmlLang}">${CONTENT[code].langLabel}</span>`)
     .join("");
   btn.setAttribute("aria-label", t().langSwitch.aria);
 }
@@ -126,7 +128,7 @@ function renderProduct() {
   $("productPoints").innerHTML = c.points.map(p => `<li>${p}</li>`).join("");
   const btn = $("productBtn");
   btn.textContent = c.cta;
-  btn.href = BRAND.talabiyye + "/?" + (lang === "en" ? "lang=en&" : "") + "src=" + encodeURIComponent(SRC ? "gd-" + SRC : "gd-site").slice(0, 40);
+  btn.href = BRAND.talabiyye + "/?" + (lang === "en" ? "lang=en&" : "lang=lb&") + "src=" + encodeURIComponent(SRC ? "gd-" + SRC : "gd-site").slice(0, 40);
 }
 
 function renderAbout() {
@@ -249,9 +251,12 @@ function renderAll() {
 }
 
 $("navToggle").addEventListener("click", () => $("navLinks").classList.toggle("open"));
-$("langToggle").addEventListener("click", () => {
+// Tap a language to pick it; tapping the active one (or the gaps) moves to the next
+$("langToggle").addEventListener("click", e => {
   const codes = Object.keys(CONTENT);
-  setLang(codes[(codes.indexOf(lang) + 1) % codes.length]);
+  const picked = e.target.closest("[data-lang]");
+  const code = picked && picked.dataset.lang;
+  setLang(code && code !== lang ? code : codes[(codes.indexOf(lang) + 1) % codes.length]);
 });
 
 renderAll();
