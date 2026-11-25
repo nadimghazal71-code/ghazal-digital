@@ -15,7 +15,7 @@
 const LEGAL_CONTACT = {
   owner: "Nadim Ghazal",
   address: "Reusstalstrasse 12, 5512 Wohlenschwil (AG)",
-  email: "info@ghazalcode.ch"
+  email: "info@ghazaldigital.com"
 };
 
 const mail = `<a href="mailto:${LEGAL_CONTACT.email}">${LEGAL_CONTACT.email}</a>`;
