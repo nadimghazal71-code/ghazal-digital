@@ -13,7 +13,7 @@
 
   Things you'll most likely want to change:
     - BRAND.whatsapp     the number every WhatsApp button opens
-    - BRAND.formEndpoint where the forms deliver (info@ghazalcode.ch, which
+    - BRAND.formEndpoint where the forms deliver (info@ghazaldigital.com, which
                          forwards to the company Gmail). FormSubmit asks this
                          address to confirm once before anything arrives.
     - contact.forms      the two enquiry forms: fields and choices
@@ -21,7 +21,7 @@
 const BRAND = {
   name: "Ghazal — Digital Solutions",
   whatsapp: "https://wa.me/9613998193",
-  formEndpoint: "https://formsubmit.co/ajax/info@ghazalcode.ch",
+  formEndpoint: "https://formsubmit.co/ajax/info@ghazaldigital.com",
   // Our own product, a separate app served by Cloudflare at ghazaldigital.com/talabiyye
   talabiyye: "/talabiyye"
 };
